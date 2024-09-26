@@ -14,7 +14,7 @@
                 <img src="./assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">HCHAOS LẢ LƯỚT</a>
+                <a href="#" class="d-block">HChao Lả Lướt</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -39,15 +39,45 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="<?= BASE_URL_ADMIN . '?act=san-pham' ?>" class="nav-link">
                         <i class="nav-icon fas fa-cat"></i>
                         <p>
-                            Sản phẩm 
+                            Sản phẩm
                         </p>
                     </a>
                 </li>
 
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>Quản lý tài khoản</p>
+                        <i class="fas fa-angle-left right"></i>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN . '?act=list-tai-khoan-quan-tri' ?>" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>Tài khoản quản trị</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN . '?act=list-tai-khoan-khach-hang' ?>" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>Tài khoản khách hàng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN . '?act=form-sua-thong-tin-ca-nhan-quan-tri' ?>"
+                                class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>Tài khoản cá nhân</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

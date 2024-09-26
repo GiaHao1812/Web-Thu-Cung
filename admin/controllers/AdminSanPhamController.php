@@ -374,6 +374,8 @@ class AdminSanPhamController
 
         $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
 
+        $listBinhLuan = $this->modelSanPham->getBinhLuanFromSanPham($id);
+
         if ($sanPham) {
             require_once './views/sanpham/detailSanPham.php';
         } else {
@@ -384,4 +386,6 @@ class AdminSanPhamController
 
         //Hàm Này Dùng để hiện thị form nhập    
     }
+
+   
 }

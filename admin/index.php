@@ -6,36 +6,73 @@ require_once '../commons/function.php'; // Hàm hỗ trợ
 // Require toàn bộ file Controllers
 require_once './controllers/AdminDanhMucController.php';
 require_once './controllers/AdminSanPhamController.php';
-
+require_once './controllers/AdminTaiKhoanController.php';
+require_once './controllers/AdminBaoCaoThongKeController.php';
 // Require toàn bộ file Models
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminSanPham.php';
+require_once './models/AdminTaiKhoan.php';
+
 
 
 
 // Route
 $act = $_GET['act'] ?? '/';
 
+if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin') {
+  checkLoginAdmin();
+}
 
 match ($act) {
 
+  // route Bao Cao Thong Ke 
+  '/' => (new AdminBaoCaoThongKeController())->home(),
 
-    // route danh muc
 
-    'danh-muc' => (new AdminDanhMucController())->danhSachDanhMuc(),
-    'form-them-danh-muc' => (new AdminDanhMucController())->formAddDanhMuc(),
-    'them-danh-muc' => (new AdminDanhMucController())->postDanhMuc(),
-    'form-sua-danh-muc' => (new AdminDanhMucController())->formEditDanhMuc(),
-    'sua-danh-muc' => (new AdminDanhMucController())->postEditDanhMuc(),
-    'xoa-danh-muc' => (new AdminDanhMucController())->deleteDanhMuc(),
+  // route danh muc
 
-    // route san pham
-    'san-pham' => (new AdminSanPhamController())->danhSachSanPham(),
-    'form-them-san-pham' => (new AdminSanPhamController())->formAddSanPham(),
-    'them-san-pham' => (new AdminSanPhamController())->postAddSanPham(),
-    'form-sua-san-pham' => (new AdminSanPhamController())->formEditSanPham(),
-    'sua-san-pham' => (new AdminSanPhamController())->postEditSanPham(),
-    'sua-album-anh-san-pham' => (new AdminSanPhamController())->postEditAnhSanPham(),
-    'xoa-san-pham' => (new AdminSanPhamController())->deleteSanPham(),
-    'chi-tiet-san-pham' => (new AdminSanPhamController())->detailSanPham(),
+  'danh-muc' => (new AdminDanhMucController())->danhSachDanhMuc(),
+  'form-them-danh-muc' => (new AdminDanhMucController())->formAddDanhMuc(),
+  'them-danh-muc' => (new AdminDanhMucController())->postDanhMuc(),
+  'form-sua-danh-muc' => (new AdminDanhMucController())->formEditDanhMuc(),
+  'sua-danh-muc' => (new AdminDanhMucController())->postEditDanhMuc(),
+  'xoa-danh-muc' => (new AdminDanhMucController())->deleteDanhMuc(),
+
+
+  // route san pham 
+
+  'san-pham' => (new AdminSanPhamController())->danhSachSanPham(),
+  'form-them-san-pham' => (new AdminSanPhamController())->formAddSanPham(),
+  'them-san-pham' => (new AdminSanPhamController())->postAddSanPham(),
+  'form-sua-san-pham' => (new AdminSanPhamController())->formEditSanPham(),
+  'sua-san-pham' => (new AdminSanPhamController())->postEditSanPham(),
+  'sua-album-anh-san-pham' => (new AdminSanPhamController())->postEditAnhSanPham(),
+  'xoa-san-pham' => (new AdminSanPhamController())->deleteSanPham(),
+  'chi-tiet-san-pham' => (new AdminSanPhamController())->detailSanPham(),
+
+  // route Quản lý toàn khoản
+  // Quản lý tài khoản quản trị
+  'list-tai-khoan-quan-tri' => (new AdminTaiKhoanController())->danhSachQuanTri(),
+  'form-them-quan-tri' => (new AdminTaiKhoanController())->formAddQuanTri(),
+  'them-quan-tri' => (new AdminTaiKhoanController())->postAddQuanTri(),
+  'form-sua-quan-tri' => (new AdminTaiKhoanController())->formEditQuanTri(),
+  'sua-quan-tri' => (new AdminTaiKhoanController())->postEditQuanTri(),
+
+
+  // Quản lý tài khoản khách hàng 
+  'list-tai-khoan-khach-hang' => (new AdminTaiKhoanController())->danhSachKhachHang(),
+  'form-sua-khach-hang' => (new AdminTaiKhoanController())->formEditKhachHang(),
+  'sua-khach-hang' => (new AdminTaiKhoanController())->postEditKhachHang(),
+
+
+  // route reset password tài khoản
+  'reset-password' => (new AdminTaiKhoanController())->resetPassword(),
+
+
+
+  // route auth
+
+  'login-admin' => (new AdminTaiKhoanController())->formLogin(),
+  'check-login-admin' => (new AdminTaiKhoanController())->login(),
+  'logout-admin' => (new AdminTaiKhoanController())->logout(),
 };

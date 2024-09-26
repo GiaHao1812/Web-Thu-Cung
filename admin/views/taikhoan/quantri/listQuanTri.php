@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Quản Danh Sách Thú Cưng</h1>
+                    <h1>Quản Lý Tài Khoản Quản Trị Viên</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -30,7 +30,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="<?= BASE_URL_ADMIN . '?act=form-them-san-pham' ?>"><button class="btn btn-success">Thêm Thú Cưng Mới</button></a>
+                            <a href="<?= BASE_URL_ADMIN . '?act=form-them-quan-tri' ?>"><button class="btn btn-success">Thêm Tài Khoản</button></a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -38,34 +38,27 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên Sản Phẩm</th>
-                                        <th>Ảnh Sản Phẩm</th>
-                                        <th>Giá Tiền</th>
-                                        <th>Số Lượng</th>
-                                        <th>Danh Mục</th>
+                                        <th>Họ Tên</th>
+                                        <th>Email</th>
+                                        <th>Số Điện Thoại</th>
                                         <th>Trạng Thái</th>
                                         <th>Thao Tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($listSanPham as $key => $sanpham) : ?>
+                                    <?php foreach ($listQuanTri as $key => $quantri) : ?>
                                         <tr>
                                             <td><?= $key + 1  ?></td>
-                                            <td><?= $sanpham['ten_san_pham']  ?></td>
-                                            <td><img src="<?= BASE_URL . $sanpham['hinh_anh']  ?>" style="width: 100px;" alt="" onerror="this.onerror=null; this.src='<?= BASE_URL ?>/uploads/ao.jpg'"></td>
-                                            <td><?= $sanpham['gia_san_pham']  ?></td>
-                                            <td><?= $sanpham['so_luong']  ?></td>
-                                            <td><?= $sanpham['ten_danh_muc']  ?></td>
-                                            <td><?= $sanpham['trang_thai'] == 1 ? 'Còn bán' : 'DỪng bán';  ?></td>
+                                            <td><?= $quantri['ho_ten']  ?></td>
+                                            <td><?= $quantri['email']  ?></td>
+                                            <td><?= $quantri['so_dien_thoai']  ?></td>
+                                            <td><?= $quantri['trang_thai'] == 1 ? "Active" : "Inactive" ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham=' . $sanpham['id'] ?>">
-                                                    <i class="nav-icon fas fa-solid fa-eye"></i>
-                                                </a>
-                                                <a class="btn btn-warning" href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_san_pham=' . $sanpham['id'] ?>">
+                                                <a class="btn btn-warning" href="<?= BASE_URL_ADMIN . '?act=form-sua-quan-tri&id_quan_tri=' . $quantri['id'] ?>">
                                                     <i class="nav-icon fas fa-solid fa-wrench"></i>
                                                 </a>
-                                                <a class="btn btn-danger" href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_san_pham=' . $sanpham['id'] ?>" onclick="return confirm('Bạn có đồng ý xóa hay không')">
-                                                    <i class="nav-icon fas fa-solid fa-trash"></i>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=reset-password&id_quan_tri=' . $quantri['id'] ?>" onclick="return confirm('Bạn có muốn reset password của tài khoản này không')">
+                                                    <button class="btn btn-danger">Reset</button>
                                                 </a>
                                             </td>
                                         </tr>
@@ -74,11 +67,9 @@
                                 <tfoot>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên Sản Phẩm</th>
-                                        <th>Ảnh Sản Phẩm</th>
-                                        <th>Giá Tiền</th>
-                                        <th>Số Lượng</th>
-                                        <th>Danh Mục</th>
+                                        <th>Họ Tên</th>
+                                        <th>Email</th>
+                                        <th>Số Điện Thoại</th>
                                         <th>Trạng Thái</th>
                                         <th>Thao Tác</th>
                                     </tr>

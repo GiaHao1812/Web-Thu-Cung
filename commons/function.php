@@ -89,4 +89,17 @@ function fomatDate($date)
 {
     return date("d-m-Y", strtotime($date));
 }
-//Debug 
+
+function checkLoginAdmin()
+{
+    if (!isset($_SESSION['user_admin'])) { // không session thì redireact về trang login
+        header("Location:" . BASE_URL_ADMIN . '?act=login-admin');
+        exit();
+    }
+}
+
+function fomatPrice($price)
+{
+    return number_format($price, 0, ',', '.');
+}
+// Debug

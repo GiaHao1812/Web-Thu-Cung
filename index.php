@@ -28,6 +28,6 @@ match ($act) {
     'trangchu' => (new HomeController())->trangChu(),
     //BASE_URL/?act=trangchu
     'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(),
-    //BASE_URL/?act=danh-sach-san-pham
+//BASE_URL/?act=danh-sach-san-pham
 
 };
