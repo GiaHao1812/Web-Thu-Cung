@@ -25,6 +25,7 @@ $act = $_GET['act'] ?? '/';
 
 match ($act) {
     // Trang chủ\
+<<<<<<< HEAD
     '/' => (new HomeController())->home(), //Trường hợp đăc biệt
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
     // Auth
@@ -33,3 +34,12 @@ match ($act) {
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
 };
+=======
+    '/' => (new HomeController())->home(),//Trường hợp đăc biệt
+    'trangchu' => (new HomeController())->trangChu(),
+    //BASE_URL/?act=trangchu
+    'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(),
+//BASE_URL/?act=danh-sach-san-pham
+
+};
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958

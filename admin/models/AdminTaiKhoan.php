@@ -2,12 +2,20 @@
 
 class AdminTaiKhoan
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public $conn;
 
     public function __construct()
     {
         $this->conn = connectDB();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function getAllTaiKhoan($chuc_vu_id)
     {
         try {
@@ -42,7 +50,10 @@ class AdminTaiKhoan
             echo 'Lỗi' . $e->getMessage();
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function getDetailTaiKhoan($id)
     {
         try {
@@ -85,7 +96,10 @@ class AdminTaiKhoan
             echo 'Lỗi' . $e->getMessage();
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function resetPassword($id, $mat_khau)
     {
         try {
@@ -105,7 +119,10 @@ class AdminTaiKhoan
             echo 'Lỗi' . $e->getMessage();
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function updateKhachHang($id, $ho_ten, $email, $so_dien_thoai, $ngay_sinh, $gioi_tinh, $dia_chi, $trang_thai)
     {
         try {
@@ -151,6 +168,10 @@ class AdminTaiKhoan
                 if ($user['chuc_vu_id'] == 1) {
                     if ($user['trang_thai'] == 1) {
                         return $user['email']; // Trường Hợp đăng nhập thành công
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                     } else {
                         return "Tài Khoản Bị Cấm";
                     }
@@ -165,6 +186,7 @@ class AdminTaiKhoan
             return false;
         }
     }
+<<<<<<< HEAD
 
     public function getTaiKhoanFromEmail($email)
     {
@@ -184,3 +206,6 @@ class AdminTaiKhoan
     }
     
 }
+=======
+}
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958

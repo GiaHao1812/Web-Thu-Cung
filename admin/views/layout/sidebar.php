@@ -48,6 +48,7 @@
                         </p>
                     </a>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item">
                     <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
@@ -56,6 +57,8 @@
                         </p>
                     </a>
                 </li>
+=======
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
 
 
                 <li class="nav-item">

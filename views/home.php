@@ -102,7 +102,15 @@
                         <a href="#">
                             <img src="assets/img/slider/slider1.png" alt="product banner">
                         </a>
+<<<<<<< HEAD
 
+=======
+                        <div class="banner-content text-right">
+                            <h5 class="banner-text1">BEAUTIFUL</h5>
+                            <h2 class="banner-text2">Wedding<span>Rings</span></h2>
+                            <a href="shop.html" class="btn btn-text">Shop Now</a>
+                        </div>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                     </figure>
                 </div>
                 <div class="col-sm-6">
@@ -110,6 +118,14 @@
                         <a href="#">
                             <img src="assets/img/slider/slider2.png" alt="product banner">
                         </a>
+<<<<<<< HEAD
+=======
+                        <div class="banner-content text-center">
+                            <h5 class="banner-text1">EARRINGS</h5>
+                            <h2 class="banner-text2">Tangerine Floral <span>Earring</span></h2>
+                            <a href="shop.html" class="btn btn-text">Shop Now</a>
+                        </div>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                     </figure>
                 </div>
             </div>
@@ -144,10 +160,17 @@
                                             <figure class="product-thumb">
                                                 <a
                                                     href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
+<<<<<<< HEAD
                                                     <img class="pri-img" style="height: 350px;"
                                                         src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
                                                     <img class="sec-img" style="height: 350px;"
                                                         src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+=======
+                                                    <img class="pri-img" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>"
+                                                        alt="product">
+                                                    <img class="sec-img" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>"
+                                                        alt="product">
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                                                 </a>
                                                 <div class="product-badge">
                                                     <?php
@@ -215,10 +238,17 @@
                         <div class="banner-slide-item">
                             <figure class="banner-statistics">
                                 <a href="#">
+<<<<<<< HEAD
                                     <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
+=======
+                                    <img src="assets/img/banner/img1-middle.jpg" alt="product banner">
+                                </a>
+                                <div class="banner-content banner-content_style2">
+                                    <h5 class="banner-text3"><a href="#">BRACELATES</a></h5>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                                 </div>
                             </figure>
                         </div>
@@ -227,10 +257,17 @@
                         <div class="banner-slide-item">
                             <figure class="banner-statistics">
                                 <a href="#">
+<<<<<<< HEAD
                                     <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
+=======
+                                    <img src="assets/img/banner/img2-middle.jpg" alt="product banner">
+                                </a>
+                                <div class="banner-content banner-content_style2">
+                                    <h5 class="banner-text3"><a href="#">EARRINGS</a></h5>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                                 </div>
                             </figure>
                         </div>
@@ -239,10 +276,17 @@
                         <div class="banner-slide-item">
                             <figure class="banner-statistics">
                                 <a href="#">
+<<<<<<< HEAD
                                     <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
+=======
+                                    <img src="assets/img/banner/img3-middle.jpg" alt="product banner">
+                                </a>
+                                <div class="banner-content banner-content_style2">
+                                    <h5 class="banner-text3"><a href="#">NECJLACES</a></h5>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                                 </div>
                             </figure>
                         </div>
@@ -251,10 +295,17 @@
                         <div class="banner-slide-item">
                             <figure class="banner-statistics">
                                 <a href="#">
+<<<<<<< HEAD
                                     <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
+=======
+                                    <img src="assets/img/banner/img4-middle.jpg" alt="product banner">
+                                </a>
+                                <div class="banner-content banner-content_style2">
+                                    <h5 class="banner-text3"><a href="#">RINGS</a></h5>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                                 </div>
                             </figure>
                         </div>
@@ -263,10 +314,17 @@
                         <div class="banner-slide-item">
                             <figure class="banner-statistics">
                                 <a href="#">
+<<<<<<< HEAD
                                     <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
+=======
+                                    <img src="assets/img/banner/img5-middle.jpg" alt="product banner">
+                                </a>
+                                <div class="banner-content banner-content_style2">
+                                    <h5 class="banner-text3"><a href="#">PEARLS</a></h5>
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                                 </div>
                             </figure>
                         </div>
@@ -1510,5 +1568,14 @@
     <!-- brand logo area end -->
 </main>
 
+<<<<<<< HEAD
 <?php require_once "layout/miniCart.php"; ?>
 <?php require_once "layout/footer.php"; ?>
+=======
+<?php require_once "layout/footer.php"; ?>
+
+<!-- offcanvas mini cart start -->
+<?php require_once "layout/miniCart.php"; ?>
+
+<!-- offcanvas mini cart end -->
+>>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
