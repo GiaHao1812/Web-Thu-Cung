@@ -14,7 +14,7 @@
                 <img src="./assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">HCHAOS LẢ LƯỚT</a>
+                <a href="#" class="d-block">HChao Lả Lướt</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -39,7 +39,7 @@
                         </p>
                     </a>
                 </li>
-                <!-- 
+
                 <li class="nav-item">
                     <a href="<?= BASE_URL_ADMIN . '?act=san-pham' ?>" class="nav-link">
                         <i class="nav-icon fas fa-cat"></i>
@@ -49,14 +49,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="nav-link">
-                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                        <p>
-                            Đơn hàng
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
@@ -84,7 +77,7 @@
                             </a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

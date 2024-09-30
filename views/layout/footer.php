@@ -14,12 +14,12 @@
                         <div class="widget-title">
                             <div class="widget-logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/logo.png" alt="brand logo">
+                                    <img src="assets/img/logo/logo1.png" alt="brand logo">
                                 </a>
                             </div>
                         </div>
                         <div class="widget-body">
-                            <p>We are a team of designers and developers that create high quality wordpress, shopify, Opencart </p>
+                            <p>Khám phá thiên đường thú cưng tại ThuCungFPL Chúng tôi cung cấp những bé chó, mèo khỏe mạnh, dễ thương, với dịch vụ chăm sóc tận tình và giao hàng nhanh chóng</p>
                         </div>
                     </div>
                 </div>
@@ -29,9 +29,9 @@
                         <div class="widget-body">
                             <address class="contact-block">
                                 <ul>
-                                    <li><i class="pe-7s-home"></i> 4710-4890 Breckinridge USA</li>
-                                    <li><i class="pe-7s-mail"></i> <a href="mailto:demo@plazathemes.com">demo@yourdomain.com </a></li>
-                                    <li><i class="pe-7s-call"></i> <a href="tel:(012)800456789987">(012) 800 456 789-987</a></li>
+                                    <li><i class="pe-7s-home"></i>Số 22-Tổ 1-Đông Anh-Hà Nội</li>
+                                    <li><i class="pe-7s-mail"></i> <a href="mailto:demo@plazathemes.com">thucungfpl@gmail.com</a></li>
+                                    <li><i class="pe-7s-call"></i> <a href="tel:(012)800456789987">0345673214</a></li>
                                 </ul>
                             </address>
                         </div>
@@ -67,10 +67,10 @@
             <div class="row align-items-center mt-20">
                 <div class="col-md-6">
                     <div class="newsletter-wrapper">
-                        <h6 class="widget-title-text">Signup for newsletter</h6>
+                        <h6 class="widget-title-text">Đăng kí để thông báo mới nhất</h6>
                         <form class="newsletter-inner" id="mc-form">
-                            <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Enter your email address">
-                            <button class="news-btn" id="mc-submit">Subscribe</button>
+                            <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Nhập Email">
+                            <button class="news-btn" id="mc-submit">Đăng kí</button>
                         </form>
                         <!-- mail-chimp-alerts Start -->
                         <div class="mailchimp-alerts">
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; 2022 <b>Corano</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/"><b>HasThemes</b></a></p>
+                        <p>&copy; 2024 <b>ninhhao</b><i class="fa fa-heart text-danger"></i><a href="#"><b>thucungfpl</b></a></p>
                     </div>
                 </div>
             </div>
