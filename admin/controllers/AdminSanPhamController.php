@@ -1,11 +1,7 @@
 <?php
 
 class AdminSanPhamController
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
 {
     public $modelSanPham;
     public $modelDanhMuc;
@@ -127,22 +123,15 @@ class AdminSanPhamController
                     }
                 }
 
-<<<<<<< HEAD
-                header("Location: " . BASE_URL_ADMIN . "?act=san-pham");
-=======
+
                 header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             } else {
                 //Trả về form
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-<<<<<<< HEAD
-                header("Location: " . BASE_URL_ADMIN . "?act=form-them-san-pham");
-=======
                 header("Location: "  . BASE_URL_ADMIN . "?act=form-them-san-pham");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
             }
         }
     }
@@ -163,11 +152,8 @@ class AdminSanPhamController
             require_once './views/sanpham/editSanPham.php';
             deleteSessionError();
         } else {
-<<<<<<< HEAD
-            header("Location: " . BASE_URL_ADMIN . "?act=san-pham");
-=======
+
             header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
             exit();
         }
 
@@ -265,22 +251,16 @@ class AdminSanPhamController
                     $mo_ta,
                     $new_file
                 );
-<<<<<<< HEAD
-                header("Location: " . BASE_URL_ADMIN . "?act=san-pham");
-=======
+
                 header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             } else {
                 //Trả về form
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-<<<<<<< HEAD
-                header("Location: " . BASE_URL_ADMIN . "?act=form-sua-san-pham&id_san_pham=" . $san_pham_id);
-=======
+
                 header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-san-pham&id_san_pham=" . $san_pham_id);
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             }
         }
@@ -363,11 +343,8 @@ class AdminSanPhamController
                 }
             }
 
-<<<<<<< HEAD
-            header("Location: " . BASE_URL_ADMIN . "?act=form-sua-san-pham&id_san_pham=" . $san_pham_id);
-=======
+
             header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-san-pham&id_san_pham=" . $san_pham_id);
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
             exit();
         }
     }
@@ -406,11 +383,8 @@ class AdminSanPhamController
         if ($sanPham) {
             require_once './views/sanpham/detailSanPham.php';
         } else {
-<<<<<<< HEAD
-            header("Location: " . BASE_URL_ADMIN . "?act=san-pham");
-=======
+
             header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
             exit();
         }
 
@@ -418,7 +392,6 @@ class AdminSanPhamController
         //Hàm Này Dùng để hiện thị form nhập    
     }
 
-<<<<<<< HEAD
     public function updateTrangThaiBinhLuan()
     {
         $id_binh_luan = $_POST['id_binh_luan'];
@@ -444,7 +417,5 @@ class AdminSanPhamController
             }
         }
     }
-=======
    
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
 }

@@ -12,21 +12,14 @@ require_once './controllers/AdminBaoCaoThongKeController.php';
 require_once './controllers/AdminTaiKhoanController.php';
 require_once './controllers/AdminDonHangController.php';
 
-=======
 require_once './controllers/AdminTaiKhoanController.php';
 require_once './controllers/AdminBaoCaoThongKeController.php';
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
 // Require toàn bộ file Models
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminSanPham.php';
 require_once './models/AdminTaiKhoan.php';
-<<<<<<< HEAD
 require_once './models/AdminDonHang.php';
-=======
 
-
-
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -34,10 +27,7 @@ $act = $_GET['act'] ?? '/';
 if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin') {
   checkLoginAdmin();
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
 match ($act) {
 
   // route Bao Cao Thong Ke 

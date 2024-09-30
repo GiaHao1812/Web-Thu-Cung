@@ -2,7 +2,6 @@
 
 class AdminTaiKhoanController
 {
-<<<<<<< HEAD
 
     public $modelTaiKhoan;
     public $modelDonHang;
@@ -10,21 +9,14 @@ class AdminTaiKhoanController
     public function __construct()
     {
         $this->modelTaiKhoan = new AdminTaiKhoan();
+        $this->modelDonHang = new AdminDonHang();
         $this->modelSanPham = new AdminSanPham();
-=======
-    public $modelTaiKhoan;
-
-    public function __construct()
-    {
-        $this->modelTaiKhoan = new AdminTaiKhoan();
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     }
 
     public function danhSachQuanTri()
     {
         $listQuanTri = $this->modelTaiKhoan->getAllTaiKhoan(1);
 
-<<<<<<< HEAD
         require_once './views/taikhoan/quantri/listQuanTri.php';
     }
 
@@ -34,19 +26,6 @@ class AdminTaiKhoanController
         deleteSessionError();
     }
 
-=======
-
-        // var_dump($listQuanTri);
-        // die;
-        require_once './views/taikhoan/quantri/listQuanTri.php';
-    }
-    public function formAddQuanTri()
-    {
-        require_once './views/taikhoan/quantri/addQuanTri.php';
-
-        deleteSessionError();
-    }
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function postAddQuanTri()
     {
 
@@ -86,29 +65,18 @@ class AdminTaiKhoanController
                 // die();
                 // $password = password_verify()// giải mã
 
-<<<<<<< HEAD
                 header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
-=======
-                header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             } else {
                 //Trả về form
                 $_SESSION['flash'] = true;
 
-<<<<<<< HEAD
                 header("Location: "  . BASE_URL_ADMIN . "?act=form-them-quan-tri");
-=======
-                header("Location: " . BASE_URL_ADMIN . "?act=form-them-quan-tri");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             }
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function formEditQuanTri()
     {
         $id_quan_tri = $_GET['id_quan_tri'];
@@ -118,10 +86,7 @@ class AdminTaiKhoanController
         require_once './views/taikhoan/quantri/editQuanTri.php';
         deleteSessionError();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function postEditQuanTri()
     {
 
@@ -167,30 +132,19 @@ class AdminTaiKhoanController
                     $so_dien_thoai,
                     $trang_thai
                 );
-<<<<<<< HEAD
                 header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
-=======
-                header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             } else {
                 //Trả về form
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-<<<<<<< HEAD
                 header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-quan-tri&id_quan_tri=" . $quan_tri_id);
-=======
-                header("Location: " . BASE_URL_ADMIN . "?act=form-sua-quan-tri&id_quan_tri=" . $quan_tri_id);
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             }
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function resetPassword()
     {
         $tai_khoan_id = $_GET['id_quan_tri'];
@@ -202,37 +156,24 @@ class AdminTaiKhoanController
         $status = $this->modelTaiKhoan->resetPassword($tai_khoan_id, $password);
 
         if ($status && $tai_khoan['chuc_vu_id'] == 1) {
-<<<<<<< HEAD
             header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
             exit();
         } elseif ($status && $tai_khoan['chuc_vu_id'] == 2) {
             header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
-=======
-            header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
-            exit();
-        } elseif ($status && $tai_khoan['chuc_vu_id'] == 2) {
-            header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
             exit();
         } else {
             var_dump('Lỗi khi reset tài khoản');
             die();
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function danhSachKhachHang()
     {
         $listKhachHang = $this->modelTaiKhoan->getAllTaiKhoan(2);
 
         require_once './views/taikhoan/khachhang/listKhachHang.php';
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function formEditKhachHang()
     {
         $id_khach_hang = $_GET['id_khach_hang'];
@@ -300,32 +241,24 @@ class AdminTaiKhoanController
                     $dia_chi,
                     $trang_thai
                 );
-<<<<<<< HEAD
                 header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
-=======
-                header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             } else {
                 //Trả về form
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-<<<<<<< HEAD
                 header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-khach-hang&id_khach_hang=" . $khach_hang_id);
-=======
-                header("Location: " . BASE_URL_ADMIN . "?act=form-sua-khach-hang&id_khach_hang=" . $khach_hang_id);
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 exit();
             }
         }
     }
-<<<<<<< HEAD
-    //donhang
+
     public function detailKhachHang()
     {
         $id_khach_hang = $_GET['id_khach_hang'];
         $khachHang = $this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);
+        $listDonHang = $this->modelDonHang->getDonHangFromKhachHang($id_khach_hang);
 
         $listBinhLuan = $this->modelSanPham->getBinhLuanFromKhachHang($id_khach_hang);
         require_once './views/taikhoan/khachhang/detailKhachHang.php';
@@ -333,18 +266,13 @@ class AdminTaiKhoanController
 
 
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function formLogin()
     {
         require_once './views/auth/formLogin.php';
 
         deleteSessionError();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -353,11 +281,7 @@ class AdminTaiKhoanController
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-<<<<<<< HEAD
             // var_dump($email);
-=======
-            // var_dump($password);
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
             // die();
 
             // Xử Lý kiểm tra thông tin đăng nhập
@@ -369,21 +293,12 @@ class AdminTaiKhoanController
                 // Lưu thông tin vào session 
                 $_SESSION['user_admin'] = $user;
 
-<<<<<<< HEAD
-=======
-                // var_dump($_SESSION['user_admin']);
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 header("Location:" . BASE_URL_ADMIN);
                 exit();
             } else {
                 // Lỗi thì lưu vào session 
                 $_SESSION['error'] = $user;
-<<<<<<< HEAD
                 // var_dump($_SESSION['error']);die();
-=======
-                // var_dump($_SESSION['error']);
-                // die();
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                 $_SESSION['flash'] = true;
 
                 header("Location:" . BASE_URL_ADMIN . '?act=login-admin');
@@ -391,10 +306,7 @@ class AdminTaiKhoanController
             }
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
     public function logout()
     {
         if (isset($_SESSION['user_admin'])) {
@@ -404,7 +316,6 @@ class AdminTaiKhoanController
     }
 
 
-<<<<<<< HEAD
     public function formEditCaNhanQuanTri()
     {
         $email = $_SESSION['user_admin'];
@@ -480,7 +391,3 @@ class AdminTaiKhoanController
         }
     }
 }
-=======
-
-}
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
