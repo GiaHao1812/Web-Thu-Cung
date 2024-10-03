@@ -3,12 +3,16 @@
 class AdminTaiKhoan
 {
 
+
+
     public $conn;
 
     public function __construct()
     {
         $this->conn = connectDB();
     }
+
+
 
     public function getAllTaiKhoan($chuc_vu_id)
     {
@@ -154,6 +158,8 @@ class AdminTaiKhoan
                     if ($user['trang_thai'] == 1) {
                         return $user['email']; // Trường Hợp đăng nhập thành công
 
+
+
                     } else {
                         return "Tài Khoản Bị Cấm";
                     }
@@ -168,6 +174,9 @@ class AdminTaiKhoan
             return false;
         }
     }
+
+
+
     public function getTaiKhoanFromEmail($email)
     {
         try {
@@ -184,5 +193,7 @@ class AdminTaiKhoan
             echo 'Lỗi' . $e->getMessage();
         }
     }
+
+
 
 }

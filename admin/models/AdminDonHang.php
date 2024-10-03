@@ -11,7 +11,25 @@ class AdminDonHang
     public function getAllDonHang()
     {
         try {
-            $sql = "SELECT don_hangs.*, trang_thai_don_hangs.ten_trang_thai FROM don_hangs INNER JOIN trang_thai_don_hangs ON don_hangs.trang_thai_id = trang_thai_don_hangs.id";
+            $sql = "SELECT don_hangs.*, trang_thai_don_hangs.ten_trang_thai 
+            FROM don_hangs 
+            INNER JOIN trang_thai_don_hangs ON don_hangs.trang_thai_id = trang_thai_don_hangs.id
+            ";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            echo 'Lỗi' . $e->getMessage();
+        }
+    }
+
+    public function getAllTrangThaiDonHang()
+    {
+        try {
+            $sql = "SELECT * FROM trang_thai_don_hangs";
 
             $stmt = $this->conn->prepare($sql);
 
@@ -27,17 +45,15 @@ class AdminDonHang
     {
         try {
             $sql = "SELECT don_hangs.*, 
-            trang_thai_don_hangs.ten_trang_thai,
-            tai_khoans.ho_ten,tai_khoans.email,tai_khoans.so_dien_thoai,
+            trang_thai_don_hangs.ten_trang_thai ,
+            tai_khoans.ho_ten, tai_khoans.email, tai_khoans.so_dien_thoai,
             phuong_thuc_thanh_toans.ten_phuong_thuc
-          
-           
+            
             FROM don_hangs 
             INNER JOIN trang_thai_don_hangs ON don_hangs.trang_thai_id = trang_thai_don_hangs.id 
             INNER JOIN tai_khoans ON don_hangs.tai_khoan_id = tai_khoans.id 
             INNER JOIN phuong_thuc_thanh_toans ON don_hangs.phuong_thuc_thanh_toan_id = phuong_thuc_thanh_toans.id 
             WHERE don_hangs.id = :id";
-
 
             $stmt = $this->conn->prepare($sql);
 
@@ -48,7 +64,8 @@ class AdminDonHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
-    public function getListSanPhamDonHang($id)
+
+    public function getListSpDonHang($id)
     {
         try {
             $sql = "SELECT chi_tiet_don_hangs.* , san_phams.ten_san_pham
@@ -65,60 +82,32 @@ class AdminDonHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
-    public function getAllTrangThaiDonHang()
-    {
-        try {
-            $sql = "SELECT * FROM trang_thai_don_hangs";
-
-            $stmt = $this->conn->prepare($sql);
-
-            $stmt->execute();
-
-            return $stmt->fetchAll();
-        } catch (\Exception $e) {
-            echo 'Lỗi' . $e->getMessage();
-        }
-    }
-    public function updateTrangThaiDonHang($idDonHang)
-    {
-        try {
-            $sql = "UPDATE don_hangs SET trang_thai_id = :trang_thais WHERE id = :id_don_hang";
-            $stmt = $this->conn->prepare($sql);
-
-            $stmt->execute([
-
-                ':id_don_hang' => $idDonHang
-            ]);
-
-            return $stmt->rowCount() > 0; // Trả về true nếu cập nhật thành công
-        } catch (\Exception $e) {
-            echo 'Lỗi: ' . $e->getMessage();
-            return false;
-        }
-    }
-
-    public function updateDonHang($id, $ten_nguoi_nhan, $sdt_nguoi_nhan, $email_nguoi_nhan, $dia_chi_nguoi_nhan, $ghi_chu, $trang_thai_id)
-    {
-        // var_dump($id);
-        // die;
+    public function updateDonHang(
+        $id,
+        $ten_nguoi_nhan,
+        $email_nguoi_nhan,
+        $sdt_nguoi_nhan,
+        $dia_chi_nguoi_nhan,
+        $ghi_chu,
+        $trang_thai_id
+    ) {
         try {
             $sql = "UPDATE don_hangs
                     SET 
                         ten_nguoi_nhan = :ten_nguoi_nhan,
-                        sdt_nguoi_nhan = :sdt_nguoi_nhan,
                         email_nguoi_nhan = :email_nguoi_nhan,
+                        sdt_nguoi_nhan = :sdt_nguoi_nhan,
                         dia_chi_nguoi_nhan = :dia_chi_nguoi_nhan,
                         ghi_chu = :ghi_chu,
                         trang_thai_id = :trang_thai_id
-                     
                     WHERE id = :id";
 
             $stmt = $this->conn->prepare($sql);
 
             $stmt->execute([
                 ':ten_nguoi_nhan' => $ten_nguoi_nhan,
-                ':sdt_nguoi_nhan' => $sdt_nguoi_nhan,
                 ':email_nguoi_nhan' => $email_nguoi_nhan,
+                ':sdt_nguoi_nhan' => $sdt_nguoi_nhan,
                 ':dia_chi_nguoi_nhan' => $dia_chi_nguoi_nhan,
                 ':ghi_chu' => $ghi_chu,
                 ':trang_thai_id' => $trang_thai_id,
@@ -129,6 +118,7 @@ class AdminDonHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
+
     public function getDonHangFromKhachHang($id)
     {
         try {
@@ -140,12 +130,11 @@ class AdminDonHang
 
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([':id' => $id]); 
+            $stmt->execute([':id' => $id]);
 
             return $stmt->fetchAll();
         } catch (\Exception $e) {
             echo 'Lỗi' . $e->getMessage();
         }
     }
-
 }
