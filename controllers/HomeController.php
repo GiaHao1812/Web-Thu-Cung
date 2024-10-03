@@ -217,8 +217,8 @@ class HomeController
                 $ma_don_hang,
                 $trang_thai_id
             );
-            var_dump('Thêm Thành Công');
-            die;
+            header("Location:" . BASE_URL . '?act=/');
+            
         }
     }
 }
