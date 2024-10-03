@@ -16,7 +16,6 @@ class AdminTaiKhoanController
     public function danhSachQuanTri()
     {
         $listQuanTri = $this->modelTaiKhoan->getAllTaiKhoan(1);
-
         require_once './views/taikhoan/quantri/listQuanTri.php';
     }
 

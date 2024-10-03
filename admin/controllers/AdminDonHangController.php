@@ -65,29 +65,29 @@ class AdminDonHangController
             $don_hang_id = $_POST['don_hang_id'] ?? '';
 
 
-            $ten_nguoi_nhan = $_POST['ten_nguoi_nhan'] ?? '';
-            $email_nguoi_nhan = $_POST['email_nguoi_nhan'] ?? '';
-            $sdt_nguoi_nhan = $_POST['sdt_nguoi_nhan'] ?? '';
-            $dia_chi_nguoi_nhan = $_POST['dia_chi_nguoi_nhan'] ?? '';
-            $ghi_chu = $_POST['ghi_chu'] ?? '';
+            // $ten_nguoi_nhan = $_POST['ten_nguoi_nhan'] ?? '';
+            // $email_nguoi_nhan = $_POST['email_nguoi_nhan'] ?? '';
+            // $sdt_nguoi_nhan = $_POST['sdt_nguoi_nhan'] ?? '';
+            // $dia_chi_nguoi_nhan = $_POST['dia_chi_nguoi_nhan'] ?? '';
+            // $ghi_chu = $_POST['ghi_chu'] ?? '';
             $trang_thai_id = $_POST['trang_thai_id'] ?? '';
 
 
 
             // Tạo 1 mảng trống để chứa dữ liệu
             $error = [];
-            if (empty($ten_nguoi_nhan)) {
-                $error['ten_nguoi_nhan'] = 'Tên người nhận không được để trống';
-            }
-            if (empty($email_nguoi_nhan)) {
-                $error['email_nguoi_nhan'] = 'Email không được để trống';
-            }
-            if (empty($sdt_nguoi_nhan)) {
-                $error['sdt_nguoi_nhan'] = 'Số điện thoại không được để trống';
-            }
-            if (empty($dia_chi_nguoi_nhan)) {
-                $error['dia_chi_nguoi_nhan'] = 'Địa chỉ không được để trống';
-            }
+            // if (empty($ten_nguoi_nhan)) {
+            //     $error['ten_nguoi_nhan'] = 'Tên người nhận không được để trống';
+            // }
+            // if (empty($email_nguoi_nhan)) {
+            //     $error['email_nguoi_nhan'] = 'Email không được để trống';
+            // }
+            // if (empty($sdt_nguoi_nhan)) {
+            //     $error['sdt_nguoi_nhan'] = 'Số điện thoại không được để trống';
+            // }
+            // if (empty($dia_chi_nguoi_nhan)) {
+            //     $error['dia_chi_nguoi_nhan'] = 'Địa chỉ không được để trống';
+            // }
             if (empty($trang_thai_id)) {
                 $error['trang_thai_id'] = 'Trạng thái đơn hàng phải chọn';
             }
@@ -103,11 +103,11 @@ class AdminDonHangController
                 // var_dump('okkk');
                 $this->modelDonHang->updateDonHang(
                     $don_hang_id,
-                    $ten_nguoi_nhan,
-                    $email_nguoi_nhan,
-                    $sdt_nguoi_nhan,
-                    $dia_chi_nguoi_nhan,
-                    $ghi_chu,
+                    // $ten_nguoi_nhan,
+                    // $email_nguoi_nhan,
+                    // $sdt_nguoi_nhan,
+                    // $dia_chi_nguoi_nhan,
+                    // $ghi_chu,
                     $trang_thai_id
                 );
                 header("Location: "  . BASE_URL_ADMIN . "?act=don-hang");

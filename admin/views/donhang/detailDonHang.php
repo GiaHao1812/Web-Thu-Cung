@@ -23,9 +23,9 @@
                     <form action="" method="POST" class="form-group">
                         <select>
                             <?php foreach ($listTrangThaiDonHang as $key => $trangThai) : ?>
-                                <option 
-                                    <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?> 
-                                    <?= $trangThai['id'] < $donHang['trang_thai_id'] ? 'disabled' : '' ?> 
+                                <option
+                                    <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
+                                    <?= $trangThai['id'] < $donHang['trang_thai_id'] ? 'disabled' : '' ?>
                                     value="<?= $trangThai['id'] ?>">
                                     <?= $trangThai['ten_trang_thai'] ?>
                                 </option>
@@ -33,7 +33,6 @@
                         </select>
                     </form>
                 </div>
-
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -43,13 +42,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <!-- Để ý id của trạng thái đơn hàng của mỗi db khác nhau -->
                     <?php
-                    if ($donHang['trang_thai_id'] == 3) {
+                    if ($donHang['trang_thai_id'] == 1) {
                         $colorAlerts = 'primary';
-                    } elseif ($donHang['trang_thai_id'] >= 4 && $donHang['trang_thai_id'] <= 11) {
+                    } elseif ($donHang['trang_thai_id'] >= 2 && $donHang['trang_thai_id'] <= 9) {
                         $colorAlerts = 'warning';
-                    } elseif ($donHang['trang_thai_id'] = 12) {
+                    } elseif ($donHang['trang_thai_id'] = 10) {
                         $colorAlerts = 'success';
                     } else {
                         $colorAlerts = 'danger';
@@ -67,10 +65,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-cat"></i> Shop Thú Cưng .
+                                    <i class="fas fa-cat"></i> Shop Thú Cưng Anii - ninhna.
                                     <small class="float-right">Ngày Đặt:
                                         <?=
-                                            fomatDate($donHang['ngay_dat']);
+                                        fomatDate($donHang['ngay_dat']);
                                         ?>
                                     </small>
                                 </h4>
@@ -82,7 +80,7 @@
                             <div class="col-sm-4 invoice-col">
                                 Thông tin người đặt
                                 <address>
-                                    <strong><?= $donHang['ho_ten'] ?></strong>
+                                    <strong><?= $donHang['ho_ten'] ?></strong><br>
                                     Email: <?= $donHang['email'] ?><br>
                                     Số Điện Thoại: <?= $donHang['so_dien_thoai'] ?><br>
                                 </address>
@@ -126,7 +124,7 @@
                                     </thead>
                                     <tbody>
                                         <?php $tong_tien = 0; ?>
-                                        <?php foreach ($sanPhamDonHang as $key => $sanPham): ?>
+                                        <?php foreach ($sanPhamDonHang as $key => $sanPham) : ?>
                                             <tr>
                                                 <td><?= $key + 1 ?></td>
                                                 <td><?= $sanPham['ten_san_pham'] ?></td>
@@ -188,7 +186,7 @@
 <!-- End Footer  -->
 <!-- Page specific script -->
 <script>
-    $(function () {
+    $(function() {
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
