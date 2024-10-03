@@ -81,7 +81,6 @@
                                     <li>
                                         <a href="#" class="minicart-btn">
                                             <i class="pe-7s-shopbag"></i>
-                                            <div class="notification"></div>
                                         </a>
                                     </li>
                                 </ul>

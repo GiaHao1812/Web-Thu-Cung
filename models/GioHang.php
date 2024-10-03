@@ -87,4 +87,21 @@ class GioHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
+
+    public function destroySanPhamInGioHang($id)
+    {
+        try {
+            $sql = "DELETE FROM chi_tiet_gio_hangs WHERE id = :id";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->execute([
+                ':id' => $id
+            ]);
+
+            return true;
+        } catch (\Exception $e) {
+            echo 'Lỗi' . $e->getMessage();
+        }
+    }
 }

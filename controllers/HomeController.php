@@ -11,6 +11,7 @@ class HomeController
         $this->modelSanPham = new SanPham();
         $this->modelTaiKhoan = new TaiKhoan();
         $this->modelGioHang = new GioHang();
+        $this->modelDonHang = new DonHang();
     }
     public function home()
     {
@@ -144,6 +145,22 @@ class HomeController
         } else {
             header("Location:" . BASE_URL . '?act=login');
         }
+    }
+
+    public function deleteSanPhamFromGioHang()
+    {
+        // var_dump('acb');
+        // die();
+        $id = $_GET['id_gio_hang'];
+        $gio_hang = $this->modelGioHang->getDetailGioHangFromId($id);
+
+
+        if ($gio_hang) {
+            $this->modelGioHang->destroySanPhamInGioHang($id);
+        }
+
+        header("Location: " . BASE_URL . '?act=gio-hang');
+        exit();
     }
     public function thanhToan()
     {

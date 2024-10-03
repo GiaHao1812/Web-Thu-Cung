@@ -20,5 +20,5 @@
     <link rel="stylesheet" href="./assets/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini hold-transition sidebar-mini layout-fixed">
     <div class="wrapper"></div>

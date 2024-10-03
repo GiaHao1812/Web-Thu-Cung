@@ -43,7 +43,9 @@
                                 <tbody>
                                     <?php
                                     $tongGioHang = 0;
-                                    foreach ($chi_tiet_gio_hang as $key => $sanPham): ?>
+                                    foreach ($chi_tiet_gio_hang as $key => $sanPham):
+
+                                    ?>
                                         <tr>
                                             <td class="pro-thumbnail"><a href="#"><img class="img-fluid"
                                                         src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="Product" /></a>
@@ -59,9 +61,10 @@
                                                     <?php } ?>
                                                 </span>
                                             </td>
-                                            <td class="pro-quantity">
-                                                <div class="pro-qty"><input type="text" value="<?= $sanPham['so_luong'] ?>">
-                                                </div>
+                                            <td>
+                                                <!-- <div class="pro-qty" > -->
+                                                <input type="text" style="width: 50px;" class="text-center" value="<?= $sanPham['so_luong'] ?>" disabled>
+                                                <!-- </div> -->
                                             </td>
                                             <td class="pro-subtotal"><span><?php
                                                                             $tong_tien = 0;
@@ -73,24 +76,18 @@
                                                                             $tongGioHang += $tong_tien;
                                                                             echo fomatPrice($tong_tien) . 'đ';
                                                                             ?></span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="pro-remove"><a href="<?= BASE_URL . '?act=xoa-gio-hang&id_gio_hang=' . $gio_hang['id'] ?>" onclick="return confirm('Bạn có đồng ý xóa hay không')"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>
                         <!-- Cart Update Option -->
-                        <div class="cart-update-option d-block d-md-flex justify-content-between">
-                            <div class="apply-coupon-wrapper">
-                                <form action="#" method="post" class=" d-block d-md-flex">
-                                    <input type="text" placeholder="Enter Your Coupon Code" required />
-                                    <button class="btn btn-sqr">Apply Coupon</button>
-                                </form>
-                            </div>
+                        <!-- <div class="cart-update-option d-block d-md-flex justify-content-between">
                             <div class="cart-update">
                                 <a href="#" class="btn btn-sqr">Update Cart</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="row">

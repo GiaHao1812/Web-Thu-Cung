@@ -220,7 +220,7 @@
                         <div class="banner-slide-item">
                             <figure class="banner-statistics">
                                 <a href="#">
-                                    <img src="assets/img/banner/Golden1.jpg" style="height: 430px;" alt="product banner">
+                                    <img src="assets/img/banner/cho1.jpg" style="height: 430px;" alt="product banner">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3"><a href="#">Golden Retriever</a></h5>

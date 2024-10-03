@@ -9,6 +9,7 @@ class AdminTaiKhoanController
     public function __construct()
     {
         $this->modelTaiKhoan = new AdminTaiKhoan();
+        $this->modelDonHang = new AdminDonHang();
         $this->modelSanPham = new AdminSanPham();
     }
 
@@ -252,11 +253,17 @@ class AdminTaiKhoanController
             }
         }
     }
+
     //donhang
+
+
     public function detailKhachHang()
     {
         $id_khach_hang = $_GET['id_khach_hang'];
         $khachHang = $this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);
+
+
+        $listDonHang = $this->modelDonHang->getDonHangFromKhachHang($id_khach_hang);
 
         $listBinhLuan = $this->modelSanPham->getBinhLuanFromKhachHang($id_khach_hang);
         require_once './views/taikhoan/khachhang/detailKhachHang.php';
