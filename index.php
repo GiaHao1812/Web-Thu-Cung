@@ -28,6 +28,7 @@ match ($act) {
     // Trang chủ\
     '/' => (new HomeController())->home(), //Trường hợp đăc biệt
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+    'san-pham' => (new HomeController())->sanPham(),
     // 'post-binh-luan-san-pham' => (new HomeController())->postBinhLuan(),
 
     // Auth
@@ -39,4 +40,3 @@ match ($act) {
     'thanh-toan' => (new HomeController())->thanhToan(),
     'xu-ly-thanh-toan' => (new HomeController())->postthanhToan(),
 };
-

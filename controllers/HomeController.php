@@ -20,6 +20,22 @@ class HomeController
         require_once "./views/home.php";
     }
 
+    public function sanPham()
+    {
+        $listDanhMuc = $this->modelSanPham->getAllDanhMuc();
+        $idDanhMuc = isset($_GET['id_danh_muc']) ? $_GET['id_danh_muc'] : null;
+
+        if ($idDanhMuc) {
+            // Truyền $idDanhMuc vào hàm getAllSanPhamToDanhMuc
+            $listSanPham = $this->modelSanPham->getAllSanPhamToDanhMuc($idDanhMuc);
+        } else {
+            $listSanPham = $this->modelSanPham->getAllSanPham();
+        }
+
+        require_once "./views/sanPham.php";
+    }
+
+
     public function chiTietSanPham()
     {
         $id = $_GET['id_san_pham'];
@@ -218,7 +234,6 @@ class HomeController
                 $trang_thai_id
             );
             header("Location:" . BASE_URL . '?act=/');
-            
         }
     }
 }
