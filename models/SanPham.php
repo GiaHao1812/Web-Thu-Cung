@@ -72,6 +72,24 @@ class SanPham
         }
     }
 
+    // public function updateBinhLuan($id, $noi_dung)
+    // {
+    //     try {
+    //         $sql = "UPDATE binh_luans SET noi_dung= :noi_dung WHERE id = :id";
+
+    //         $stmt = $this->conn->prepare($sql);
+
+    //         $stmt->execute([
+    //             ':noi_dung' => $noi_dung,
+    //             ':id' => $id
+    //         ]);
+
+    //         return true;
+    //     } catch (\Exception $e) {
+    //         echo 'Lỗi' . $e->getMessage();
+    //     }
+    // }
+
     public function getListSanPhamDanhMuc($danh_muc_id)
     {
         try {

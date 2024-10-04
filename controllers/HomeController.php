@@ -11,6 +11,7 @@ class HomeController
         $this->modelSanPham = new SanPham();
         $this->modelTaiKhoan = new TaiKhoan();
         $this->modelGioHang = new GioHang();
+        $this->modelDonHang = new DonHang();
     }
     public function home()
     {
@@ -145,6 +146,22 @@ class HomeController
             header("Location:" . BASE_URL . '?act=login');
         }
     }
+
+    public function deleteSanPhamFromGioHang()
+    {
+        // var_dump('acb');
+        // die();
+        $id = $_GET['id_gio_hang'];
+        $gio_hang = $this->modelGioHang->getDetailGioHangFromId($id);
+
+
+        if ($gio_hang) {
+            $this->modelGioHang->destroySanPhamInGioHang($id);
+        }
+
+        header("Location: " . BASE_URL . '?act=gio-hang');
+        exit();
+    }
     public function thanhToan()
     {
         if (isset($_SESSION['user_client'])) {
@@ -200,8 +217,8 @@ class HomeController
                 $ma_don_hang,
                 $trang_thai_id
             );
-            var_dump('Thêm Thành Công');
-            die;
+            header("Location:" . BASE_URL . '?act=/');
+            
         }
     }
 }

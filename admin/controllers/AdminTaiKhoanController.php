@@ -16,7 +16,6 @@ class AdminTaiKhoanController
     public function danhSachQuanTri()
     {
         $listQuanTri = $this->modelTaiKhoan->getAllTaiKhoan(1);
-
         require_once './views/taikhoan/quantri/listQuanTri.php';
     }
 
@@ -254,10 +253,15 @@ class AdminTaiKhoanController
         }
     }
 
+    //donhang
+
+
     public function detailKhachHang()
     {
         $id_khach_hang = $_GET['id_khach_hang'];
         $khachHang = $this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);
+
+
         $listDonHang = $this->modelDonHang->getDonHangFromKhachHang($id_khach_hang);
 
         $listBinhLuan = $this->modelSanPham->getBinhLuanFromKhachHang($id_khach_hang);

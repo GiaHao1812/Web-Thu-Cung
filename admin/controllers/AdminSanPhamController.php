@@ -2,6 +2,7 @@
 
 class AdminSanPhamController
 
+
 {
     public $modelSanPham;
     public $modelDanhMuc;
@@ -123,7 +124,6 @@ class AdminSanPhamController
                     }
                 }
 
-
                 header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
                 exit();
             } else {
@@ -152,7 +152,6 @@ class AdminSanPhamController
             require_once './views/sanpham/editSanPham.php';
             deleteSessionError();
         } else {
-
             header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
             exit();
         }
@@ -251,7 +250,6 @@ class AdminSanPhamController
                     $mo_ta,
                     $new_file
                 );
-
                 header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
                 exit();
             } else {
@@ -259,7 +257,6 @@ class AdminSanPhamController
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-
                 header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-san-pham&id_san_pham=" . $san_pham_id);
                 exit();
             }
@@ -343,7 +340,6 @@ class AdminSanPhamController
                 }
             }
 
-
             header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-san-pham&id_san_pham=" . $san_pham_id);
             exit();
         }
@@ -383,7 +379,6 @@ class AdminSanPhamController
         if ($sanPham) {
             require_once './views/sanpham/detailSanPham.php';
         } else {
-
             header("Location: "  . BASE_URL_ADMIN . "?act=san-pham");
             exit();
         }
@@ -410,12 +405,11 @@ class AdminSanPhamController
 
             if ($status) {
                 if ($name_view == 'detail_khach') {
-                    header("Location: " . BASE_URL_ADMIN . "?act=chi-tiet-khach-hang&id_khach_hang=" . $binhLuan['tai_khoan_id']);
+                    header("Location: "  . BASE_URL_ADMIN . "?act=chi-tiet-khach-hang&id_khach_hang=" . $binhLuan['tai_khoan_id']);
                 } else {
-                    header("Location: " . BASE_URL_ADMIN . "?act=chi-tiet-san-pham&id_san_pham=" . $binhLuan['san_pham_id']);
+                    header("Location: "  . BASE_URL_ADMIN . "?act=chi-tiet-san-pham&id_san_pham=" . $binhLuan['san_pham_id']);
                 }
             }
         }
     }
-   
 }

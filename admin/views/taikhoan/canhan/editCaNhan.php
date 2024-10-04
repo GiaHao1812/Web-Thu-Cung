@@ -56,6 +56,9 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary" value="Lưu">
                             <label class="col-lg-3 control-label">Company:</label>
                             <div class="col-lg-12">
                                 <input class="form-control" type="text" value="">

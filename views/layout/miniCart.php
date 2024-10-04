@@ -57,6 +57,7 @@
                     </ul>
                 </div>
 
+
                 <div class="minicart-button">
                     <a href="<?= BASE_URL . '?act=gio-hang' ?>"><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</a>
                     <a href="<?= BASE_URL . '?act=thanh-toan' ?>"><i class="fa fa-share"></i> Thanh Toán</a>

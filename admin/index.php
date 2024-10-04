@@ -6,14 +6,16 @@ require_once '../commons/function.php'; // Hàm hỗ trợ
 // Require toàn bộ file Controllers
 require_once './controllers/AdminDanhMucController.php';
 require_once './controllers/AdminSanPhamController.php';
-require_once './controllers/AdminDonHangController.php';
 require_once './controllers/AdminBaoCaoThongKeController.php';
 require_once './controllers/AdminTaiKhoanController.php';
+require_once './controllers/AdminDonHangController.php';
+//
 // Require toàn bộ file Models
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminSanPham.php';
-require_once './models/AdminDonHang.php';
 require_once './models/AdminTaiKhoan.php';
+require_once './models/AdminDonHang.php';
+
 
 
 // Route
@@ -22,6 +24,7 @@ $act = $_GET['act'] ?? '/';
 if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin') {
     checkLoginAdmin();
 }
+//
 match ($act) {
 
     // route Bao Cao Thong Ke 
@@ -50,7 +53,6 @@ match ($act) {
     // route binh luan
     'update-trang-thai-binh-luan' => (new AdminSanPhamController())->updateTrangThaiBinhLuan(),
 
-
     // route don hang
 
     'don-hang' => (new AdminDonHangController())->danhSachDonHang(),
@@ -66,11 +68,13 @@ match ($act) {
     'form-sua-quan-tri' => (new AdminTaiKhoanController())->formEditQuanTri(),
     'sua-quan-tri' => (new AdminTaiKhoanController())->postEditQuanTri(),
 
+//
     // Quản lý tài khoản khách hàng 
     'list-tai-khoan-khach-hang' => (new AdminTaiKhoanController())->danhSachKhachHang(),
     'form-sua-khach-hang' => (new AdminTaiKhoanController())->formEditKhachHang(),
     'sua-khach-hang' => (new AdminTaiKhoanController())->postEditKhachHang(),
     'chi-tiet-khach-hang' => (new AdminTaiKhoanController())->detailKhachHang(),
+
 
     // route quản lí tài khoản cá nhân(quản trị)
     'form-sua-thong-tin-ca-nhan-quan-tri' => (new AdminTaiKhoanController())->formEditCaNhanQuanTri(),
@@ -80,10 +84,9 @@ match ($act) {
 
     // route reset password tài khoản
     'reset-password' => (new AdminTaiKhoanController())->resetPassword(),
-
     // route auth
-
     'login-admin' => (new AdminTaiKhoanController())->formLogin(),
     'check-login-admin' => (new AdminTaiKhoanController())->login(),
     'logout-admin' => (new AdminTaiKhoanController())->logout(),
+
 };

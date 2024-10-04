@@ -37,47 +37,6 @@
                         <form action="<?= BASE_URL_ADMIN . '?act=sua-don-hang' ?>" method="POST">
                             <input type="text" name="don_hang_id" value="<?= $donHang['id'] ?>" hidden>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label>Tên người nhận</label>
-                                    <input type="text" class="form-control" name="ten_nguoi_nhan"
-                                        value="<?= $donHang['ten_nguoi_nhan'] ?>" placeholder="Nhập tên danh mục">
-                                    <?php if (isset($error['ten_nguoi_nhan'])) { ?>
-                                        <p class="text-danger"><?= $error['ten_nguoi_nhan']; ?></p>
-                                    <?php } ?>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Số điện thoại</label>
-                                    <input type="text" class="form-control" name="sdt_nguoi_nhan"
-                                        value="<?= $donHang['sdt_nguoi_nhan'] ?>" placeholder="Nhập tên danh mục">
-                                    <?php if (isset($error['sdt_nguoi_nhan'])) { ?>
-                                        <p class="text-danger"><?= $error['sdt_nguoi_nhan']; ?></p>
-                                    <?php } ?>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="text" class="form-control" name="email_nguoi_nhan"
-                                        value="<?= $donHang['email_nguoi_nhan'] ?>" placeholder="Nhập tên danh mục">
-                                    <?php if (isset($error['email_nguoi_nhan'])) { ?>
-                                        <p class="text-danger"><?= $error['email_nguoi_nhan']; ?></p>
-                                    <?php } ?>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Địa Chỉ</label>
-                                    <input type="text" class="form-control" name="dia_chi_nguoi_nhan"
-                                        value="<?= $donHang['dia_chi_nguoi_nhan'] ?>" placeholder="Nhập tên danh mục">
-                                    <?php if (isset($error['dia_chi_nguoi_nhan'])) { ?>
-                                        <p class="text-danger"><?= $error['dia_chi_nguoi_nhan']; ?></p>
-                                    <?php } ?>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Ghi Chú</label>
-                                    <textarea name="ghi_chu" id="" class="form-control"
-                                        placeholder="Nhập mô tả"><?= $donHang['ghi_chu'] ?></textarea>
-                                </div>
                                 <hr>
                                 <div class="form-group">
                                     <label for="inputStatus">Trang Thái Đơn Hàng</label>
@@ -85,19 +44,18 @@
 
                                         <?php foreach ($listTrangThaiDonHang as $trangThai): ?>
                                             <option <?php
-                                            if (
-                                                $donHang['trang_thai_id'] > $trangThai['id']
-                                                || $donHang['trang_thai_id'] == 11
-                                                || $donHang['trang_thai_id'] == 12
-                                                || $donHang['trang_thai_id'] == 13
+                                                    if (
+                                                        $donHang['trang_thai_id'] > $trangThai['id']
+                                                        || $donHang['trang_thai_id'] == 9
+                                                        || $donHang['trang_thai_id'] == 10
+                                                        || $donHang['trang_thai_id'] == 11
 
-                                            ) {
-                                                echo 'disabled';
+                                                    ) {
+                                                        echo 'disabled';
+                                                    }
 
-                                            }
 
-
-                                            ?>
+                                                    ?>
                                                 <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
                                                 value="<?= $trangThai['id'] ?>"><?= $trangThai['ten_trang_thai'] ?></>
                                             <?php endforeach; ?>
