@@ -56,11 +56,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-<<<<<<< HEAD
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary" value="Lưu">
-=======
                             <label class="col-lg-3 control-label">Company:</label>
                             <div class="col-lg-12">
                                 <input class="form-control" type="text" value="">
@@ -94,7 +89,6 @@
                             <label class="col-md-3 control-label"></label>
                             <div class="col-md-12">
                                 <input type="submit" class="btn btn-primary" value="Save Changes">
->>>>>>> 26f130b16b0c4010214c2f3ca0a4758120a7e958
                             </div>
                         </div>
                     </form>

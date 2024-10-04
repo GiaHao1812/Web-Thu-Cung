@@ -221,8 +221,8 @@ caption {
 }
 
 th {
-  text-align: inherit;
   text-align: -webkit-match-parent;
+  text-align: inherit;
 }
 
 label {
@@ -287,6 +287,11 @@ button::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   padding: 0;
   border-style: none;
+}
+.main-sidebar {
+  height: 100vh; /* Full viewport height */
+  position: fixed;
+  overflow-y: auto; /* Scrollbar if content exceeds height */
 }
 
 input[type="radio"],
