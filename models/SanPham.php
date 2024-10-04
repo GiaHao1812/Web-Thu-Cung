@@ -7,7 +7,7 @@ class SanPham
         $this->conn = connectDB();
     }
     //Viết hàm lấy toàn bộ danh sách sản phẩm
-    public function getAllSanPham()
+    public function getAllSanPham(): array
     {
         try {
             $sql = "SELECT san_phams.* , danh_mucs.ten_danh_muc
@@ -24,6 +24,40 @@ class SanPham
             echo "Lỗi " . $e->getMessage();
         }
     }
+    public function getAllDanhMuc()
+    {
+        try {
+            $sql = "SELECT * FROM danh_mucs"; // Truy vấn lấy tất cả danh mục
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC); // Trả về mảng các danh mục
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+
+    public function getAllSanPhamToDanhMuc($id)
+    {
+        try {
+            // Đảm bảo rằng $id được truyền vào là một số nguyên
+            $id = (int)$id;
+
+            $sql = "SELECT san_phams.*, danh_mucs.ten_danh_muc
+        FROM san_phams
+        INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+        WHERE san_phams.danh_muc_id = :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi " . $e->getMessage();
+        }
+    }
+
+
     public function getDetailSanPham($id)
     {
         try {

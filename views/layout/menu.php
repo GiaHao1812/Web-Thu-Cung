@@ -27,11 +27,7 @@
                                         <li><a href="<?= BASE_URL ?>">Home</a>
 
                                         </li>
-                                        <li><a href="blog-left-sidebar.html">Sản Phẩm<i
-                                                    class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                            </ul>
+                                        <li><a href="<?= BASE_URL . '?act=san-pham' ?>">Sản Phẩm</a>
                                         </li>
                                         <li><a href="#">Giới Thiệu</a></li>
                                         <li><a href="#">Liên Hệ</a></li>
