@@ -33,8 +33,8 @@
                                                 <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Giới Thiệu</a></li>
-                                        <li><a href="#">Liên Hệ</a></li>
+                                        <li><a href="<?= BASE_URL . '?act=gioi-thieu' ?>">Giới Thiệu</a></li>
+                                        <li><a href="<?= BASE_URL . '?act=lien-he' ?>">Liên Hệ</a></li>
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->
@@ -59,8 +59,8 @@
                                 <ul class="nav justify-content-end">
                                     <!-- Hiện tên đăng nhập -->
                                     <label for=""><?php if (isset($_SESSION['user_client'])) {
-                                                        echo $_SESSION['user_client'];
-                                                    } ?></label>
+                                        echo $_SESSION['user_client'];
+                                    } ?></label>
                                     <!--  -->
                                     <li class="user-hover">
                                         <a href="#">

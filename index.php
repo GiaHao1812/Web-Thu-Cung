@@ -38,5 +38,7 @@ match ($act) {
     'xoa-gio-hang' => (new HomeController())->deleteSanPhamFromGioHang(),
     'thanh-toan' => (new HomeController())->thanhToan(),
     'xu-ly-thanh-toan' => (new HomeController())->postthanhToan(),
+    'lien-he' =>(new HomeController())->lienHe(),
+    'gioi-thieu' =>(new HomeController())->gioiThieu(),
 };
 

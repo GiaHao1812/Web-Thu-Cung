@@ -19,6 +19,16 @@ class HomeController
 
         require_once "./views/home.php";
     }
+    public function lienHe()
+    {
+
+        require_once "./views/lienHe.php";
+    }
+    public function gioiThieu()
+    {
+
+        require_once "./views/gioiThieu.php";
+    }
 
     public function chiTietSanPham()
     {
@@ -218,7 +228,9 @@ class HomeController
                 $trang_thai_id
             );
             header("Location:" . BASE_URL . '?act=/');
-            
+
         }
     }
+
+
 }
