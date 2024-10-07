@@ -19,6 +19,11 @@
                 <div class="col-sm-6">
                     <h1>Quản Lý Tài Khoản Khách Hàng</h1>
                 </div>
+                <div class="col-sm-6 text-right ">
+                    <a href="<?= BASE_URL_ADMIN . '?act=list-tai-khoan-khach-hang' ?>"
+                        class="btn btn-secondary">Back</a>
+                </div>
+
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -28,7 +33,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4">
-                    <img src="<?= BASE_URL . $khachHang['anh_dai_dien']  ?>" style="width: 70%;" alt="" onerror="this.onerror=null; this.src='<?= BASE_URL ?>/uploads/149071.png'">
+                    <img src="<?= BASE_URL . $khachHang['anh_dai_dien'] ?>" style="width: 70%;" alt=""
+                        onerror="this.onerror=null; this.src='<?= BASE_URL ?>/uploads/149071.png'">
                 </div>
                 <div class="col-8">
                     <div class="container">
@@ -84,20 +90,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($listDonHang as $key => $donHang) : ?>
+                            <?php foreach ($listDonHang as $key => $donHang): ?>
                                 <tr>
-                                    <td><?= $key + 1  ?></td>
-                                    <td><?= $donHang['ma_don_hang']  ?></td>
-                                    <td><?= $donHang['ten_nguoi_nhan']  ?></td>
-                                    <td><?= $donHang['sdt_nguoi_nhan']  ?></td>
-                                    <td><?= $donHang['ngay_dat']  ?></td>
-                                    <td><?= $donHang['tong_tien']  ?></td>
-                                    <td><?= $donHang['ten_trang_thai']  ?></td>
+                                    <td><?= $key + 1 ?></td>
+                                    <td><?= $donHang['ma_don_hang'] ?></td>
+                                    <td><?= $donHang['ten_nguoi_nhan'] ?></td>
+                                    <td><?= $donHang['sdt_nguoi_nhan'] ?></td>
+                                    <td><?= $donHang['ngay_dat'] ?></td>
+                                    <td><?= $donHang['tong_tien'] ?></td>
+                                    <td><?= $donHang['ten_trang_thai'] ?></td>
                                     <td>
-                                        <a class="btn btn-primary" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>">
+                                        <a class="btn btn-primary"
+                                            href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>">
                                             <i class="nav-icon fas fa-solid fa-eye"></i>
                                         </a>
-                                        <a class="btn btn-warning" href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_don_hang=' . $donHang['id'] ?>">
+                                        <a class="btn btn-warning"
+                                            href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_don_hang=' . $donHang['id'] ?>">
                                             <i class="nav-icon fas fa-solid fa-wrench"></i>
                                         </a>
                                     </td>
@@ -122,23 +130,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($listBinhLuan as $key => $binhLuan) : ?>
+                            <?php foreach ($listBinhLuan as $key => $binhLuan): ?>
                                 <tr>
-                                    <td><?= $key + 1  ?></td>
+                                    <td><?= $key + 1 ?></td>
                                     <td>
-                                        <a target="_blank" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham=' . $binhLuan['san_pham_id'] ?>">
-                                            <?= $binhLuan['ten_san_pham']  ?>
+                                        <a target="_blank"
+                                            href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham=' . $binhLuan['san_pham_id'] ?>">
+                                            <?= $binhLuan['ten_san_pham'] ?>
                                         </a>
                                     </td>
-                                    <td><?= $binhLuan['noi_dung']  ?></td>
-                                    <td><?= $binhLuan['ngay_dang']  ?></td>
+                                    <td><?= $binhLuan['noi_dung'] ?></td>
+                                    <td><?= $binhLuan['ngay_dang'] ?></td>
                                     <td><?= $binhLuan['trang_thai'] == 1 ? "Hiện Thị" : "Bị Ẩn" ?></td>
                                     <td>
-                                        <form action="<?= BASE_URL_ADMIN . '?act=update-trang-thai-binh-luan' ?>" method="POST">
+                                        <form action="<?= BASE_URL_ADMIN . '?act=update-trang-thai-binh-luan' ?>"
+                                            method="POST">
 
                                             <input type="hidden" name="id_binh_luan" value="<?= $binhLuan['id'] ?>">
                                             <input type="hidden" name="name_view" value="detail_khach">
-                                            <button onclick="return confirm('Bạn có muốn ẩn bình luận này không')" class="btn btn-secondary">
+                                            <button onclick="return confirm('Bạn có muốn ẩn bình luận này không')"
+                                                class="btn btn-secondary">
                                                 <?= $binhLuan['trang_thai'] == 1 ? 'Ẩn' : 'Bỏ Ẩn' ?>
                                             </button>
 
@@ -165,7 +176,7 @@
 
 </body>
 <script>
-    $(function() {
+    $(function () {
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,

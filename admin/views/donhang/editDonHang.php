@@ -44,18 +44,18 @@
 
                                         <?php foreach ($listTrangThaiDonHang as $trangThai): ?>
                                             <option <?php
-                                                    if (
-                                                        $donHang['trang_thai_id'] > $trangThai['id']
-                                                        || $donHang['trang_thai_id'] == 9
-                                                        || $donHang['trang_thai_id'] == 10
-                                                        || $donHang['trang_thai_id'] == 11
+                                            if (
+                                                $donHang['trang_thai_id'] > $trangThai['id']
+                                                || $donHang['trang_thai_id'] == 9
+                                                || $donHang['trang_thai_id'] == 10
+                                                || $donHang['trang_thai_id'] == 11
 
-                                                    ) {
-                                                        echo 'disabled';
-                                                    }
+                                            ) {
+                                                echo 'disabled';
+                                            }
 
 
-                                                    ?>
+                                            ?>
                                                 <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
                                                 value="<?= $trangThai['id'] ?>"><?= $trangThai['ten_trang_thai'] ?></>
                                             <?php endforeach; ?>
@@ -66,6 +66,8 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-warning">Submit</button>
+                                <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="btn btn-secondary">Back</a>
+
                             </div>
                         </form>
                     </div>

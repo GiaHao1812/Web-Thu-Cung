@@ -21,7 +21,8 @@ class TaiKhoan
 
                 if ($user['chuc_vu_id'] == 2) {
                     if ($user['trang_thai'] == 1) {
-                        return $user['email']; // Trường Hợp đăng nhập thành công
+                        //sửa  return $user['email']-> return $user thay vì trả lại 1 chuổi email thì trả lại 1 đối tượng user
+                        return $user; // Trường Hợp đăng nhập thành công
                     } else {
                         return "Tài Khoản Bị Cấm";
                     }

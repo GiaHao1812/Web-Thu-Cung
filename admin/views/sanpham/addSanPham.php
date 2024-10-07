@@ -34,11 +34,13 @@
                         </div>
 
 
-                        <form action="<?= BASE_URL_ADMIN . '?act=them-san-pham' ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?= BASE_URL_ADMIN . '?act=them-san-pham' ?>" method="POST"
+                            enctype="multipart/form-data">
                             <div class="row card-body ">
                                 <div class="form-group col-12">
                                     <label>Tên sản phẩm</label>
-                                    <input type="text" class="form-control" name="ten_san_pham" placeholder="Nhập tên sản phẩm">
+                                    <input type="text" class="form-control" name="ten_san_pham"
+                                        placeholder="Nhập tên sản phẩm">
                                     <?php if (isset($_SESSION['error']['ten_san_pham'])) { ?>
                                         <p class="text-danger"><?= $_SESSION['error']['ten_san_pham']; ?></p>
                                     <?php } ?>
@@ -46,7 +48,8 @@
 
                                 <div class="form-group col-6">
                                     <label>Giá sản phẩm</label>
-                                    <input type="number" class="form-control" name="gia_san_pham" placeholder="Nhập giá sản phẩm">
+                                    <input type="number" class="form-control" name="gia_san_pham"
+                                        placeholder="Nhập giá sản phẩm">
                                     <?php if (isset($_SESSION['error']['gia_san_pham'])) { ?>
                                         <p class="text-danger"><?= $_SESSION['error']['gia_san_pham']; ?></p>
                                     <?php } ?>
@@ -54,7 +57,8 @@
 
                                 <div class="form-group col-6">
                                     <label>Giá khuyễn mãi</label>
-                                    <input type="number" class="form-control" name="gia_khuyen_mai" placeholder="Nhập giá khuyễn mãi">
+                                    <input type="number" class="form-control" name="gia_khuyen_mai"
+                                        placeholder="Nhập giá khuyễn mãi">
                                     <?php if (isset($_SESSION['error']['gia_khuyen_mai'])) { ?>
                                         <p class="text-danger"><?= $_SESSION['error']['gia_khuyen_mai']; ?></p>
                                     <?php } ?>
@@ -76,7 +80,8 @@
 
                                 <div class="form-group col-6">
                                     <label>Số lượng</label>
-                                    <input type="number" class="form-control" name="so_luong" placeholder="Nhập số lượng">
+                                    <input type="number" class="form-control" name="so_luong"
+                                        placeholder="Nhập số lượng">
                                     <?php if (isset($_SESSION['error']['so_luong'])) { ?>
                                         <p class="text-danger"><?= $_SESSION['error']['so_luong']; ?></p>
                                     <?php } ?>
@@ -84,7 +89,8 @@
 
                                 <div class="form-group col-6">
                                     <label>Ngày nhập</label>
-                                    <input type="date" class="form-control" name="ngay_nhap" placeholder="Nhập ngày nhập">
+                                    <input type="date" class="form-control" name="ngay_nhap"
+                                        placeholder="Nhập ngày nhập">
                                     <?php if (isset($_SESSION['error']['ngay_nhap'])) { ?>
                                         <p class="text-danger"><?= $_SESSION['error']['ngay_nhap']; ?></p>
                                     <?php } ?>
@@ -95,7 +101,7 @@
                                     <select class="form-control" name="danh_muc_id">
                                         <option selected disabled>Chọn tên danh mục sản phẩm</option>
 
-                                        <?php foreach ($listDanhMuc as $danhMuc) : ?>
+                                        <?php foreach ($listDanhMuc as $danhMuc): ?>
                                             <option value="<?= $danhMuc['id'] ?>"><?= $danhMuc['ten_danh_muc'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
@@ -119,12 +125,14 @@
 
                                 <div class="form-group col-12">
                                     <label>Mô tả</label>
-                                    <textarea name="mo_ta" id="" class="form-control" placeholder="Nhập mô tả"></textarea>
+                                    <textarea name="mo_ta" id="" class="form-control"
+                                        placeholder="Nhập mô tả"></textarea>
                                 </div>
                             </div>
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="<?= BASE_URL_ADMIN . '?act=san-pham' ?>" class="btn btn-secondary">Back</a>
                             </div>
                         </form>
                     </div>

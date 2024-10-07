@@ -64,13 +64,13 @@ class AdminTaiKhoanController
                 // die();
                 // $password = password_verify()// giải mã
 
-                header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
+                header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
                 exit();
             } else {
                 //Trả về form
                 $_SESSION['flash'] = true;
 
-                header("Location: "  . BASE_URL_ADMIN . "?act=form-them-quan-tri");
+                header("Location: " . BASE_URL_ADMIN . "?act=form-them-quan-tri");
                 exit();
             }
         }
@@ -131,14 +131,14 @@ class AdminTaiKhoanController
                     $so_dien_thoai,
                     $trang_thai
                 );
-                header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
+                header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
                 exit();
             } else {
                 //Trả về form
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-                header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-quan-tri&id_quan_tri=" . $quan_tri_id);
+                header("Location: " . BASE_URL_ADMIN . "?act=form-sua-quan-tri&id_quan_tri=" . $quan_tri_id);
                 exit();
             }
         }
@@ -155,10 +155,10 @@ class AdminTaiKhoanController
         $status = $this->modelTaiKhoan->resetPassword($tai_khoan_id, $password);
 
         if ($status && $tai_khoan['chuc_vu_id'] == 1) {
-            header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
+            header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-quan-tri");
             exit();
         } elseif ($status && $tai_khoan['chuc_vu_id'] == 2) {
-            header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
+            header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
             exit();
         } else {
             var_dump('Lỗi khi reset tài khoản');
@@ -240,14 +240,14 @@ class AdminTaiKhoanController
                     $dia_chi,
                     $trang_thai
                 );
-                header("Location: "  . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
+                header("Location: " . BASE_URL_ADMIN . "?act=list-tai-khoan-khach-hang");
                 exit();
             } else {
                 //Trả về form
                 // Đặt chỉ thị xóa session sau khi hiển thị form 
 
                 $_SESSION['flash'] = true;
-                header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-khach-hang&id_khach_hang=" . $khach_hang_id);
+                header("Location: " . BASE_URL_ADMIN . "?act=form-sua-khach-hang&id_khach_hang=" . $khach_hang_id);
                 exit();
             }
         }
@@ -394,4 +394,6 @@ class AdminTaiKhoanController
             }
         }
     }
+
+  
 }

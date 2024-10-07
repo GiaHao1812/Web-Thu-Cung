@@ -39,7 +39,11 @@ match ($act) {
     'logout' => (new HomeController())->logout(),
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
-    'xoa-gio-hang' => (new HomeController())->deleteSanPhamFromGioHang(),
+    // 'xoa-gio-hang' => (new HomeController())->deleteSanPhamFromGioHang(),
     'thanh-toan' => (new HomeController())->thanhToan(),
     'xu-ly-thanh-toan' => (new HomeController())->postthanhToan(),
+    'lien-he' => (new HomeController())->lienHe(),
+    'gioi-thieu' => (new HomeController())->gioiThieu(),
+    'tai-khoan' => (new HomeController())->taiKhoan(),
+    'chi-tiet-don-hang' => (new HomeController())->chiTietDonHang(),
 };
