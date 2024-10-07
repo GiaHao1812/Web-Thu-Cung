@@ -34,6 +34,9 @@ match ($act) {
     // Auth
     'login' => (new HomeController())->formLogin(),
     'check-login' => (new HomeController())->postLogin(),
+    'register' => (new HomeController())->formRegister(),
+    'check-register' => (new HomeController())->postRegister(),
+    'logout' => (new HomeController())->logout(),
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
     'xoa-gio-hang' => (new HomeController())->deleteSanPhamFromGioHang(),
