@@ -50,11 +50,13 @@
                                         <p class="text-danger"><?= $_SESSION['error']['email']; ?></p>
                                     <?php } ?>
                                 </div>
-                                
+
                             </div>
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="<?= BASE_URL_ADMIN . '?act=list-tai-khoan-quan-tri' ?>"
+                                    class="btn btn-secondary">Back</a>
                             </div>
                         </form>
                     </div>

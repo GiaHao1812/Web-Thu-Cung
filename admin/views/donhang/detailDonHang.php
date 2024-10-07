@@ -22,9 +22,8 @@
                 <div class="col-sm-2">
                     <form action="" method="POST" class="form-group">
                         <select>
-                            <?php foreach ($listTrangThaiDonHang as $key => $trangThai) : ?>
-                                <option
-                                    <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
+                            <?php foreach ($listTrangThaiDonHang as $key => $trangThai): ?>
+                                <option <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
                                     <?= $trangThai['id'] < $donHang['trang_thai_id'] ? 'disabled' : '' ?>
                                     value="<?= $trangThai['id'] ?>">
                                     <?= $trangThai['ten_trang_thai'] ?>
@@ -33,6 +32,7 @@
                         </select>
                     </form>
                 </div>
+
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -68,7 +68,7 @@
                                     <i class="fas fa-cat"></i> Shop Thú Cưng Anii - ninhna.
                                     <small class="float-right">Ngày Đặt:
                                         <?=
-                                        fomatDate($donHang['ngay_dat']);
+                                            fomatDate($donHang['ngay_dat']);
                                         ?>
                                     </small>
                                 </h4>
@@ -124,7 +124,7 @@
                                     </thead>
                                     <tbody>
                                         <?php $tong_tien = 0; ?>
-                                        <?php foreach ($sanPhamDonHang as $key => $sanPham) : ?>
+                                        <?php foreach ($sanPhamDonHang as $key => $sanPham): ?>
                                             <tr>
                                                 <td><?= $key + 1 ?></td>
                                                 <td><?= $sanPham['ten_san_pham'] ?></td>
@@ -166,11 +166,15 @@
                                         </tr>
                                     </table>
                                 </div>
+
                             </div>
+
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
-
+                        <div class="col-sm-6 text-right ">
+                            <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="btn btn-secondary">Back</a>
+                        </div>
                         <!-- this row will not appear when printing -->
                     </div>
                     <!-- /.invoice -->
@@ -186,7 +190,7 @@
 <!-- End Footer  -->
 <!-- Page specific script -->
 <script>
-    $(function() {
+    $(function () {
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,

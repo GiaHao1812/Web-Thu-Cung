@@ -142,9 +142,12 @@
                                     <?php foreach ($listSanPham as $key => $sanPham): ?>
                                         <div class="product-item">
                                             <figure class="product-thumb">
-                                                <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
-                                                    <img class="pri-img" style="height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-                                                    <img class="sec-img" style="height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                                <a
+                                                    href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
+                                                    <img class="pri-img" style="object-fit: cover; height: 350px;"
+                                                        src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                                    <img class="sec-img" style="object-fit: cover; height: 350px;"
+                                                        src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
                                                 </a>
                                                 <div class="product-badge">
                                                     <?php
@@ -153,7 +156,90 @@
                                                     $tinhNgay = $ngayHienTai->diff($ngayNhap);
 
                                                     if ($tinhNgay->days <= 7) {
-                                                    ?>
+                                                        ?>
+                                                        <div class="product-label new">
+                                                            <span>Mới</span>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                                <div class="cart-hover">
+                                                    <button class="btn btn-cart">
+                                                        <a class="btn btn-text text-decoration-none"
+                                                            href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
+                                                            Xem Chi Tiết
+                                                        </a>
+                                                    </button>
+                                                </div>
+                                            </figure>
+                                            <div class="product-caption text-center">
+                                                <h6 class="product-name fs-5">
+                                                    <a
+                                                        href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
+                                                        <?= $sanPham['ten_san_pham'] ?>
+                                                    </a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <!-- Chỉ hiển thị giá gốc -->
+                                                    <span class="price-regular">
+                                                        <?= fomatPrice($sanPham['gia_san_pham']) . "đ"; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach ?>
+                                    <!-- product item end -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- product tab content end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product area end -->
+
+    <!-- product banner statistics area start -->
+    <section class="product-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- section title start -->
+                    <div class="section-title text-center">
+                        <h2 class="title">Giá Khuyến Mãi</h2>
+                        <p class="sub-title">Sản Phẩm Của Chúng Tôi</p>
+                    </div>
+                    <!-- section title start -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-container">
+
+                        <!-- product tab content start -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab1">
+                                <div class="product-carousel-4 slick-row-10 slick-arrow-style">
+                                    <!-- product item start -->
+                                    <?php foreach ($listSanPham as $key => $sanPham): ?>
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a
+                                                    href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
+                                                    <img class="pri-img" style="object-fit: cover; height: 350px;"
+                                                        src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                                    <img class="sec-img" style="object-fit: cover; height: 350px;"
+                                                        src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                                </a>
+                                                <div class="product-badge">
+                                                    <?php
+                                                    $ngayNhap = new DateTime($sanPham['ngay_nhap']);
+                                                    $ngayHienTai = new DateTime();
+                                                    $tinhNgay = $ngayHienTai->diff($ngayNhap);
+
+                                                    if ($tinhNgay->days <= 7) {
+                                                        ?>
                                                         <div class="product-label new">
                                                             <span>Mới</span>
                                                         </div>
@@ -167,20 +253,27 @@
 
                                                 </div>
                                                 <div class="cart-hover">
-                                                    <button class="btn btn-cart"><a class="btn btn-text text-decoration-none" href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">Xem Chi Tiết</a></button>
+                                                    <button class="btn btn-cart"><a
+                                                            class="btn btn-text text-decoration-none"
+                                                            href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">Xem
+                                                            Chi Tiết</a></button>
                                                 </div>
                                             </figure>
                                             <div class="product-caption text-center">
 
-                                                <h6 class="product-name">
-                                                    <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>"><?= $sanPham['ten_san_pham'] ?></a>
+                                                <h6 class="product-name fs-5">
+                                                    <a
+                                                        href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>"><?= $sanPham['ten_san_pham'] ?></a>
                                                 </h6>
                                                 <div class="price-box">
                                                     <?php if ($sanPham['gia_khuyen_mai']) { ?>
-                                                        <span class="price-regular"><?= fomatPrice($sanPham['gia_khuyen_mai']) . "đ"; ?></span>
-                                                        <span class="price-old"><del><?= fomatPrice($sanPham['gia_san_pham']) . "đ" ?></del></span>
+                                                        <span
+                                                            class="price-regular"><?= fomatPrice($sanPham['gia_khuyen_mai']) . "đ"; ?></span>
+                                                        <span
+                                                            class="price-old"><del><?= fomatPrice($sanPham['gia_san_pham']) . "đ" ?></del></span>
                                                     <?php } else { ?>
-                                                        <span class="price-regular"><?= fomatPrice($sanPham['gia_san_pham']) . "đ"; ?></span>
+                                                        <span
+                                                            class="price-regular"><?= fomatPrice($sanPham['gia_san_pham']) . "đ"; ?></span>
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -191,79 +284,6 @@
                             </div>
                         </div>
                         <!-- product tab content end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- product area end -->
-
-    <!-- product banner statistics area start -->
-    <section class="product-banner-statistics">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="product-banner-carousel slick-row-10">
-                        <!-- banner single slide start -->
-                        <div class="banner-slide-item">
-                            <figure class="banner-statistics">
-                                <a href="#">
-                                    <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
-                                </a>
-                                <div class="banner-content banner-content_style2">
-                                    <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
-                                </div>
-                            </figure>
-                        </div>
-                        <!-- banner single slide start -->
-                        <!-- banner single slide start -->
-                        <div class="banner-slide-item">
-                            <figure class="banner-statistics">
-                                <a href="#">
-                                    <img src="assets/img/banner/cho1.jpg" style="height: 430px;" alt="product banner">
-                                </a>
-                                <div class="banner-content banner-content_style2">
-                                    <h5 class="banner-text3"><a href="#">Golden Retriever</a></h5>
-                                </div>
-                            </figure>
-                        </div>
-                        <!-- banner single slide start -->
-                        <!-- banner single slide start -->
-                        <div class="banner-slide-item">
-                            <figure class="banner-statistics">
-                                <a href="#">
-                                    <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
-                                </a>
-                                <div class="banner-content banner-content_style2">
-                                    <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
-                                </div>
-                            </figure>
-                        </div>
-                        <!-- banner single slide start -->
-                        <!-- banner single slide start -->
-                        <div class="banner-slide-item">
-                            <figure class="banner-statistics">
-                                <a href="#">
-                                    <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
-                                </a>
-                                <div class="banner-content banner-content_style2">
-                                    <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
-                                </div>
-                            </figure>
-                        </div>
-                        <!-- banner single slide start -->
-                        <!-- banner single slide start -->
-                        <div class="banner-slide-item">
-                            <figure class="banner-statistics">
-                                <a href="#">
-                                    <img src="assets/img/banner/meo1.webp" style="height: 430px;" alt="product banner">
-                                </a>
-                                <div class="banner-content banner-content_style2">
-                                    <h5 class="banner-text3"><a href="#">Mèo Chân Ngắn</a></h5>
-                                </div>
-                            </figure>
-                        </div>
-                        <!-- banner single slide start -->
                     </div>
                 </div>
             </div>
@@ -306,7 +326,10 @@
                     <div class="testimonial-content-wrapper">
                         <div class="testimonial-content-carousel">
                             <div class="testimonial-content">
-                                <p>Mình đã mua một bé Golden Retriever từ trang này, và thực sự hài lòng với dịch vụ. Chó rất khỏe mạnh, nhanh nhẹn và đã được tiêm phòng đầy đủ. Nhân viên hỗ trợ nhiệt tình, trả lời mọi thắc mắc của mình trước khi quyết định mua. Bé về nhà rất nhanh hòa nhập với gia đình và dễ huấn luyện. Rất đáng tiền!</p>
+                                <p>Mình đã mua một bé Golden Retriever từ trang này, và thực sự hài lòng với dịch vụ.
+                                    Chó rất khỏe mạnh, nhanh nhẹn và đã được tiêm phòng đầy đủ. Nhân viên hỗ trợ nhiệt
+                                    tình, trả lời mọi thắc mắc của mình trước khi quyết định mua. Bé về nhà rất nhanh
+                                    hòa nhập với gia đình và dễ huấn luyện. Rất đáng tiền!</p>
                                 <div class="ratings">
                                     <span><i class="fa fa-star-o"></i></span>
                                     <span><i class="fa fa-star-o"></i></span>
@@ -317,7 +340,10 @@
                                 <h5 class="testimonial-author">Phạm Minh Quang</h5>
                             </div>
                             <div class="testimonial-content">
-                                <p>Mình mua một bé mèo Anh lông ngắn từ trang web này. Mèo rất đáng yêu, lông mềm mịn và không hề sợ người. Tuy nhiên, thời gian giao hàng hơi chậm so với mong đợi. Bù lại, bé được chăm sóc tốt và có đầy đủ giấy tờ tiêm chủng. Nếu dịch vụ vận chuyển nhanh hơn thì sẽ hoàn hảo!</p>
+                                <p>Mình mua một bé mèo Anh lông ngắn từ trang web này. Mèo rất đáng yêu, lông mềm mịn và
+                                    không hề sợ người. Tuy nhiên, thời gian giao hàng hơi chậm so với mong đợi. Bù lại,
+                                    bé được chăm sóc tốt và có đầy đủ giấy tờ tiêm chủng. Nếu dịch vụ vận chuyển nhanh
+                                    hơn thì sẽ hoàn hảo!</p>
                                 <div class="ratings">
                                     <span><i class="fa fa-star-o"></i></span>
                                     <span><i class="fa fa-star-o"></i></span>
@@ -328,7 +354,10 @@
                                 <h5 class="testimonial-author">Nguyễn Đức Vinh</h5>
                             </div>
                             <div class="testimonial-content">
-                                <p>Trang web này thực sự uy tín. Mình đã chọn một bé Corgi, chó con rất khỏe mạnh, vui tươi và năng động. Chỉ có một điều nhỏ là không có nhiều thông tin về cách chăm sóc ban đầu trên trang, nhưng nhân viên đã cung cấp thêm hướng dẫn rất chi tiết sau khi mua. Rất vui vì đã chọn được một người bạn đồng hành tuyệt vời!</p>
+                                <p>Trang web này thực sự uy tín. Mình đã chọn một bé Corgi, chó con rất khỏe mạnh, vui
+                                    tươi và năng động. Chỉ có một điều nhỏ là không có nhiều thông tin về cách chăm sóc
+                                    ban đầu trên trang, nhưng nhân viên đã cung cấp thêm hướng dẫn rất chi tiết sau khi
+                                    mua. Rất vui vì đã chọn được một người bạn đồng hành tuyệt vời!</p>
                                 <div class="ratings">
                                     <span><i class="fa fa-star-o"></i></span>
                                     <span><i class="fa fa-star-o"></i></span>
@@ -339,7 +368,10 @@
                                 <h5 class="testimonial-author">Nguyễn Thế Anh</h5>
                             </div>
                             <div class="testimonial-content">
-                                <p>Mèo Ba Tư mình mua trên trang thật sự rất đẹp và thuần chủng. Giao hàng đúng hẹn và mèo không có dấu hiệu mệt mỏi hay căng thẳng sau hành trình. Trang web còn cung cấp đầy đủ thức ăn và vật dụng kèm theo, nên mình không phải lo lắng gì nhiều. Mình chắc chắn sẽ quay lại nếu cần thêm thú cưng!</p>
+                                <p>Mèo Ba Tư mình mua trên trang thật sự rất đẹp và thuần chủng. Giao hàng đúng hẹn và
+                                    mèo không có dấu hiệu mệt mỏi hay căng thẳng sau hành trình. Trang web còn cung cấp
+                                    đầy đủ thức ăn và vật dụng kèm theo, nên mình không phải lo lắng gì nhiều. Mình chắc
+                                    chắn sẽ quay lại nếu cần thêm thú cưng!</p>
                                 <div class="ratings">
                                     <span><i class="fa fa-star-o"></i></span>
                                     <span><i class="fa fa-star-o"></i></span>

@@ -19,6 +19,9 @@
                 <div class="col-sm-6">
                     <h1>Quản Danh Sách Thú Cưng</h1>
                 </div>
+                <div class="col-sm-6 text-right ">
+                    <a href="<?= BASE_URL_ADMIN . '?act=san-pham' ?>" class="btn btn-secondary">Back</a>
+                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -53,7 +56,8 @@
                             <h4 class="mt-3">Ngày Nhập: <small><?= $sanPham['ngay_nhap'] ?></small></h4>
                             <h4 class="mt-3">Danh Mục: <small><?= $sanPham['ten_danh_muc'] ?></small></h4>
                             <h4 class="mt-3">Trang Thái:
-                                <small><?= $sanPham['trang_thai'] == 1 ? 'Còn Bán' : 'Dừng bán' ?></small></h4>
+                                <small><?= $sanPham['trang_thai'] == 1 ? 'Còn Bán' : 'Dừng bán' ?></small>
+                            </h4>
                             <h4 class="mt-3">Mô Tả: <small><?= $sanPham['mo_ta'] ?></small></h4>
 
                     </div>

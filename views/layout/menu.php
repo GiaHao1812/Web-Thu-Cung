@@ -27,11 +27,7 @@
                                         <li><a href="<?= BASE_URL ?>">Home</a>
 
                                         </li>
-                                        <li><a href="blog-left-sidebar.html">Sản Phẩm<i
-                                                    class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                            </ul>
+                                        <li><a href="<?= BASE_URL . '?act=san-pham' ?>">Sản Phẩm</a>
                                         </li>
                                         <li><a href="<?= BASE_URL . '?act=gioi-thieu' ?>">Giới Thiệu</a></li>
                                         <li><a href="<?= BASE_URL . '?act=lien-he' ?>">Liên Hệ</a></li>
@@ -63,19 +59,14 @@
                                     } ?></label>
                                     <!--  -->
                                     <li class="user-hover">
-                                        <a href="#">
-                                            <i class="pe-7s-user"></i>
-                                        </a>
+                                        <a href="#"><i class="pe-7s-user"></i></a>
                                         <ul class="dropdown-list">
-                                            <!-- Check Đăng Nhập -->
+                                            <!-- Kiểm tra nếu chưa đăng nhập -->
                                             <?php if (!isset($_SESSION['user_client'])) { ?>
                                                 <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng Nhập</a></li>
-
                                             <?php } else { ?>
-                                                <li><a href="my-account.html">Tài Khoản</a></li>
+                                                <li><a href="<?= BASE_URL . '?act=tai-khoan' ?>">Tài Khoản</a></li>
                                             <?php } ?>
-
-                                            <!--  -->
                                         </ul>
                                     </li>
                                     <li>

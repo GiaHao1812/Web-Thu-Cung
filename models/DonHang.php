@@ -36,4 +36,19 @@ class DonHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
+    //Lịch sử đơn hàng
+    public function getDonHangByTaiKhoan($tai_khoan_id)
+    {
+        try {
+            $sql = "SELECT * FROM don_hangs WHERE tai_khoan_id = :tai_khoan_id ORDER BY ngay_dat DESC ";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':tai_khoan_id' => $tai_khoan_id]);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo "Lỗi" . $e->getMessage();
+        }
+    }
+   
+
+
 }

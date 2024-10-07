@@ -31,7 +31,9 @@
 
                 <div class="col-md-3">
                     <div class="text-center">
-                        <img src="<?= BASE_URL . $thongTin['anh_dai_dien']; ?>" class="avatar img-circle" alt="<?= $thongTin['ho_ten'] ?>" style="width: 180px;" onerror="this.onerror=null; this.src='<?= BASE_URL ?>/uploads/149071.png'">
+                        <img src="<?= BASE_URL . $thongTin['anh_dai_dien']; ?>" class="avatar img-circle"
+                            alt="<?= $thongTin['ho_ten'] ?>" style="width: 180px;"
+                            onerror="this.onerror=null; this.src='<?= BASE_URL ?>/uploads/149071.png'">
                         <h6 class="mt-2">Họ Tên: <?= $thongTin['ho_ten'] ?></h6>
                         <h6 class="mt-2">Chức Vụ: <?= $thongTin['chuc_vu_id'] ?></h6>
                     </div>
@@ -46,7 +48,7 @@
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Họ Tên:</label>
                             <div class="col-lg-12">
-                                <input class="form-control" type="text" value="" name="">
+                                <input class="form-control" type="text" value="<?= $thongTin['ho_ten'] ?>" name="" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -55,38 +57,7 @@
                                 <input class="form-control" type="text" value="Bishop">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary" value="Lưu">
-                            <label class="col-lg-3 control-label">Company:</label>
-                            <div class="col-lg-12">
-                                <input class="form-control" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Email:</label>
-                            <div class="col-lg-12">
-                                <input class="form-control" type="text" value="janesemail@gmail.com">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Time Zone:</label>
-                            <div class="col-lg-12">
-                                <div class="ui-select">
-                                    <select id="user_time_zone" class="form-control">
-                                        <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                                        <option value="Alaska">(GMT-09:00) Alaska</option>
-                                        <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                                        <option value="Arizona">(GMT-07:00) Arizona</option>
-                                        <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                                        <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                                        <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                                        <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+
 
                         <div class="form-group">
                             <label class="col-md-3 control-label"></label>
@@ -136,6 +107,8 @@
                             <label class="col-md-3 control-label"></label>
                             <div class="col-md-12">
                                 <input type="submit" class="btn btn-primary" value="Save Changes">
+                                <a href="<?= BASE_URL_ADMIN . '?act=list-tai-khoan-quan-tri' ?>"
+                                    class="btn btn-secondary">Back</a>
                             </div>
                         </div>
                     </form>

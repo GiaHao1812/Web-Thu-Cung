@@ -28,6 +28,7 @@ match ($act) {
     // Trang chủ\
     '/' => (new HomeController())->home(), //Trường hợp đăc biệt
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+    'san-pham' => (new HomeController())->sanPham(),
     // 'post-binh-luan-san-pham' => (new HomeController())->postBinhLuan(),
 
     // Auth
@@ -35,10 +36,11 @@ match ($act) {
     'check-login' => (new HomeController())->postLogin(),
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
-    'xoa-gio-hang' => (new HomeController())->deleteSanPhamFromGioHang(),
+    // 'xoa-gio-hang' => (new HomeController())->deleteSanPhamFromGioHang(),
     'thanh-toan' => (new HomeController())->thanhToan(),
     'xu-ly-thanh-toan' => (new HomeController())->postthanhToan(),
-    'lien-he' =>(new HomeController())->lienHe(),
-    'gioi-thieu' =>(new HomeController())->gioiThieu(),
+    'lien-he' => (new HomeController())->lienHe(),
+    'gioi-thieu' => (new HomeController())->gioiThieu(),
+    'tai-khoan' => (new HomeController())->taiKhoan(),
+    'chi-tiet-don-hang' => (new HomeController())->chiTietDonHang(),
 };
-
