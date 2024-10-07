@@ -47,17 +47,17 @@ class HomeController
     public function chiTietDonHang()
     {
         $id_don_hang = $_GET['id_don_hang'] ?? null;
-        
+
         // Kiểm tra ID đơn hàng
         if (!$id_don_hang || !is_numeric($id_don_hang)) {
             header("Location: " . BASE_URL);
             exit();
         }
-    
+
         $donHang = $this->modelDonHang->getDonHangById($id_don_hang);
         if ($donHang) {
             $chiTietSanPham = $this->modelDonHang->getChiTietDonHang($id_don_hang);
-            
+
             // Lấy thông tin sản phẩm cho từng chi tiết đơn hàng
             $sanPhamDetails = [];
             foreach ($chiTietSanPham as $item) {
@@ -68,14 +68,14 @@ class HomeController
                     'gia' => $sanPham['gia'], // Hoặc tính toán giá theo nhu cầu
                 ];
             }
-    
+
             require_once './views/chiTietDonHang.php';
         } else {
             header("Location: " . BASE_URL);
             exit();
         }
     }
-    
+
 
 
 
@@ -152,6 +152,55 @@ class HomeController
             }
         }
     }
+
+    public function formRegister()
+    {
+        require_once './views/auth/formRegister.php';
+
+        deleteSessionError();
+    }
+
+    public function postRegister()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Lấy thông tin từ form gửi lên
+            $hoTen = $_POST['ho_ten'];
+            $email = $_POST['email'];
+            $password = $_POST['mat_khau'];
+
+            // Kiểm tra xem email đã tồn tại trong cơ sở dữ liệu chưa
+            $user = $this->modelTaiKhoan->registerUser($hoTen, $email, $password);
+
+            if (is_string($user)) { // Trường hợp có lỗi (như email đã tồn tại)
+                $_SESSION['error'] = $user;
+                $_SESSION['flash'] = true;
+
+                header("Location:" . BASE_URL . '?act=register');
+                exit();
+            } else {
+                // Nếu đăng ký thành công, đăng nhập người dùng và chuyển hướng
+                $_SESSION['user_client'] = $user;
+
+                header("Location:" . BASE_URL);
+                exit();
+            }
+        }
+    }
+
+    public function logout()
+    {
+        // Xóa tất cả session liên quan đến người dùng
+        session_start();
+        session_unset();
+        session_destroy();
+
+        // Chuyển hướng người dùng về trang chủ hoặc trang đăng nhập
+        header("Location: " . BASE_URL);
+        exit();
+    }
+
+
+
 
     public function addGioHang()
     {
@@ -301,7 +350,4 @@ class HomeController
             exit();
         }
     }
-    
-
-
 }

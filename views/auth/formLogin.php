@@ -39,7 +39,7 @@
                             <?php } ?>
                             <form action="<?= BASE_URL . '?act=check-login' ?>" method="POST">
                                 <div class="single-input-item">
-                                    <input type="email" placeholder="Email or Username" name="email" required />
+                                    <input type="email" placeholder="Email" name="email" required />
                                 </div>
                                 <div class="single-input-item">
                                     <input type="password" placeholder="Enter your Password" name="password" required />

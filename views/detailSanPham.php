@@ -177,13 +177,8 @@
                             <div class="product-item">
                                 <figure class="product-thumb">
                                     <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
-
-                                        <img class="pri-img" style="height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-                                        <img class="sec-img" style="height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-
-                                        <img class="pri-img" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-                                        <img class="sec-img" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-
+                                        <img class="pri-img" style="object-fit: cover; height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                        <img class="sec-img" style="object-fit: cover; height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
                                     </a>
                                     <div class="product-badge">
                                         <?php
@@ -206,24 +201,20 @@
 
                                     </div>
                                     <div class="cart-hover">
-                                        <button class="btn btn-cart">Xem Chi Tiết</button>
+                                        <button class="btn btn-cart"><a class="btn btn-text text-decoration-none" href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">Xem Chi Tiết</a></button>
                                     </div>
                                 </figure>
                                 <div class="product-caption text-center">
 
                                     <h6 class="product-name">
-                                        <a
-                                            href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>"><?= $sanPham['ten_san_pham'] ?></a>
+                                        <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>"><?= $sanPham['ten_san_pham'] ?></a>
                                     </h6>
                                     <div class="price-box">
                                         <?php if ($sanPham['gia_khuyen_mai']) { ?>
-                                            <span
-                                                class="price-regular"><?= fomatPrice($sanPham['gia_khuyen_mai']) . "đ"; ?></span>
-                                            <span
-                                                class="price-old"><del><?= fomatPrice($sanPham['gia_san_pham']) . "đ" ?></del></span>
+                                            <span class="price-regular"><?= fomatPrice($sanPham['gia_khuyen_mai']) . "đ"; ?></span>
+                                            <span class="price-old"><del><?= fomatPrice($sanPham['gia_san_pham']) . "đ" ?></del></span>
                                         <?php } else { ?>
-                                            <span
-                                                class="price-regular"><?= fomatPrice($sanPham['gia_san_pham']) . "đ"; ?></span>
+                                            <span class="price-regular"><?= fomatPrice($sanPham['gia_san_pham']) . "đ"; ?></span>
                                         <?php } ?>
                                     </div>
                                 </div>
