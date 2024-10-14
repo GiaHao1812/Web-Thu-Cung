@@ -24,7 +24,7 @@
                                         address</a>
                                     <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Account
                                         Details</a>
-                                    <a href="login-register.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="<?= BASE_URL . "?act=logout" ?>"><i class="fa fa-sign-out"></i> Logout</a>
                                 </div>
                             </div>
                             <!-- My Account Tab Menu End -->
@@ -88,6 +88,12 @@
                                                                         case 9:
                                                                             echo 'Thành Công';
                                                                             break;
+                                                                        case 10:
+                                                                            echo 'Hoàn Hàng';
+                                                                            break;
+                                                                        case 11:
+                                                                            echo 'Hủy Đơn';
+                                                                            break;
 
                                                                         default:
                                                                             echo 'Đang xử lý';
@@ -95,10 +101,19 @@
                                                                     }
                                                                     ?>
                                                                 </td>
-                                                                <td><?= number_format($donHang['tong_tien'], decimals: 2) . 'đ'; ?>
+                                                                <td><?= number_format($donHang['tong_tien']) . 'đ'; ?>
                                                                 </td>
-                                                                <td><a href="<?= BASE_URL . '?act=chi-tiet-don-hang&id=' . $donHang['id'] ?>"
-                                                                        class="btn btn-sqr">View</a></td>
+                                                                <td><a href="<?= BASE_URL . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>"
+                                                                        class="btn btn-sqr">View</a>
+                                                                    <form action="<?= BASE_URL . '?act=huy-don-hang' ?>" method="POST">
+                                                                        <input type="hidden" name="id_don_hang" value="<?= $donHang['id']; ?>"> <!-- Truyền ID đơn hàng -->
+                                                                        <button type="submit" class="btn btn-sqr mt-4" onclick="return confirm('Bạn muốn hủy đơn?')">Hủy đơn</button>
+                                                                    </form>
+
+
+
+                                                                </td>
+
                                                             </tr>
                                                         <?php endforeach; ?>
                                                     </tbody>

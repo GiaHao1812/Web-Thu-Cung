@@ -6,13 +6,6 @@
         <div class="section-bg-color">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Chi Tiết Đơn Hàng</h1>
-                    <p>Mã Đơn Hàng: <?= htmlspecialchars($donHang['ma_don_hang']) ?></p>
-                    <p>Tên Người Nhận: <?= htmlspecialchars($donHang['ten_nguoi_nhan']) ?></p>
-                    <p>Địa Chỉ: <?= htmlspecialchars($donHang['dia_chi_nguoi_nhan']) ?></p>
-                    <p>Tổng Tiền: <?= fomatPrice($donHang['tong_tien']) . 'đ' ?></p>
-                    <p>Ngày Đặt: <?= htmlspecialchars($donHang['ngay_dat']) ?></p> <!-- Nếu có trường này -->
-
                     <h2>Chi Tiết Sản Phẩm</h2>
                     <div class="cart-table table-responsive">
                         <table class="table table-bordered">

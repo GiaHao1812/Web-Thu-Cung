@@ -156,7 +156,7 @@
                                                     $tinhNgay = $ngayHienTai->diff($ngayNhap);
 
                                                     if ($tinhNgay->days <= 7) {
-                                                        ?>
+                                                    ?>
                                                         <div class="product-label new">
                                                             <span>Mới</span>
                                                         </div>
@@ -239,7 +239,7 @@
                                                     $tinhNgay = $ngayHienTai->diff($ngayNhap);
 
                                                     if ($tinhNgay->days <= 7) {
-                                                        ?>
+                                                    ?>
                                                         <div class="product-label new">
                                                             <span>Mới</span>
                                                         </div>

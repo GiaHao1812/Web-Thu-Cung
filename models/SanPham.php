@@ -24,6 +24,26 @@ class SanPham
             echo "Lỗi " . $e->getMessage();
         }
     }
+    public function getSanPhamByTaiKhoan($tai_khoan_id): array
+    {
+        try {
+            $sql = "SELECT san_phams.* , danh_mucs.ten_danh_muc
+                FROM san_phams
+                INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+                INNER JOIN chi_tiet_don_hangs ON san_phams.id = chi_tiet_don_hangs.san_pham_id
+                INNER JOIN don_hangs ON chi_tiet_don_hangs.don_hang_id = don_hangs.id
+                WHERE don_hangs.tai_khoan_id = :tai_khoan_id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':tai_khoan_id', $tai_khoan_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi " . $e->getMessage();
+        }
+    }
+
     public function getAllDanhMuc()
     {
         try {

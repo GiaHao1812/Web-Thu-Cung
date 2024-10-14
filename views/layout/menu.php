@@ -69,7 +69,7 @@
                                                 <li><a href="<?= BASE_URL . '?act=register' ?>">Đăng Kí</a></li>
 
                                             <?php } else { ?>
-                                                <li><a href="my-account.html">Tài Khoản</a></li>
+                                                <li><a href="<?= BASE_URL . "?act=tai-khoan" ?>">Tài Khoản</a></li>
                                                 <li><a href="<?= BASE_URL . '?act=logout' ?>">Đăng Xuất</a></li>
                                             <?php } ?>
 

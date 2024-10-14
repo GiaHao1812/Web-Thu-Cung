@@ -30,20 +30,32 @@
                     <div class="col-lg-12">
                         <div class="login-reg-form-wrap">
                             <h5 class="text-center">Đăng Ký Tài Khoản</h5>
+
+                            <!-- Hiển thị thông báo lỗi -->
                             <?php if (isset($_SESSION['error'])) { ?>
                                 <p class="text-danger login-box-msg text-center"><?= $_SESSION['error']; ?></p>
-                            <?php  } else { ?>
+                                <?php unset($_SESSION['error']); // Xóa thông báo lỗi sau khi hiển thị 
+                                ?>
+                            <?php } ?>
+
+                            <!-- Hiển thị thông báo thành công -->
+                            <?php if (isset($_SESSION['success'])) { ?>
+                                <p class="text-success login-box-msg text-center"><?= $_SESSION['success']; ?></p>
+                                <?php unset($_SESSION['success']); // Xóa thông báo thành công sau khi hiển thị 
+                                ?>
+                            <?php } else { ?>
                                 <p class="login-box-msg">Vui Lòng Điền Thông Tin</p>
                             <?php } ?>
+
                             <form action="<?= BASE_URL . '?act=check-register' ?>" method="POST">
                                 <div class="single-input-item">
-                                    <input type="text" placeholder="Họ Tên" name="ho_ten" required />
+                                    <input type="text" placeholder="Họ Tên" name="ho_ten" />
                                 </div>
                                 <div class="single-input-item">
-                                    <input type="email" placeholder="Email" name="email" required />
+                                    <input type="text" placeholder="Email" name="email" />
                                 </div>
                                 <div class="single-input-item">
-                                    <input type="password" placeholder="Nhập mật khẩu" name="mat_khau" required />
+                                    <input type="password" placeholder="Nhập mật khẩu" name="mat_khau" />
                                 </div>
                                 <div class="single-input-item">
                                     <button class="btn btn-sqr">Đăng Ký</button>
