@@ -56,7 +56,7 @@
                                             <td><?= $donHang['tong_tien']  ?></td>
                                             <td><?= $donHang['ten_trang_thai']  ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>">
+                                                <a class="btn btn-primary" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&don_hang_id=' . $donHang['id'] ?>">
                                                     <i class="nav-icon fas fa-solid fa-eye"></i>
                                                 </a>
                                                 <a class="btn btn-warning" href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_don_hang=' . $donHang['id'] ?>">

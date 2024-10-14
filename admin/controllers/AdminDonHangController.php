@@ -19,9 +19,10 @@ class AdminDonHangController
     }
 
 
+
     public function detailDonHang()
     {
-        $don_hang_id = $_GET['id_don_hang'];
+        $don_hang_id = $_GET['don_hang_id'];
 
         // Lấy thông tin đơn hàng ở bản don_hangs
         $donHang = $this->modelDonHang->getDetailDonHang($don_hang_id);
@@ -34,41 +35,14 @@ class AdminDonHangController
 
         require_once './views/donhang/detailDonHang.php';
     }
-    //////////////////
-    //SỬA Đơn Hàng//
-    ////////////////
-
-    public function formEditDonHang()
-    {
-        $id = $_GET['id_don_hang'];
-        $donHang = $this->modelDonHang->getDetailDonHang($id);
-        $listTrangThaiDonHang = $this->modelDonHang->getAllTrangThaiDonHang();
-        if ($donHang) {
-            require_once './views/donhang/editDonHang.php';
-            deleteSessionError();
-        } else {
-            header("Location: "  . BASE_URL_ADMIN . "?act=don-hang");
-            exit();
-        }
-    }
     public function postEditDonHang()
     {
-
-
-        //Hàm Này Dùng Xử lý thêm dữ liệu
-
-        // Kiểm tra xem dữ liệu có phải được submit lên không
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Lấy ra dữ liệu 
-            // Lấy ra dữ liêu của sản phẩm
+            // Lấy dữ liệu từ form
             $don_hang_id = $_POST['don_hang_id'] ?? '';
-
             $trang_thai_id = $_POST['trang_thai_id'] ?? '';
 
-
-
-            // Tạo 1 mảng trống để chứa dữ liệu
+            // Kiểm tra lỗi
             $error = [];
             if (empty($trang_thai_id)) {
                 $error['trang_thai_id'] = 'Trạng thái đơn hàng phải chọn';
@@ -76,28 +50,16 @@ class AdminDonHangController
 
             $_SESSION['error'] = $error;
 
-            // var_dump($error);
-            // die();
-
-            // Nếu không có lỗi thì tiến hành Sửa
+            // Nếu không có lỗi thì tiến hành cập nhật
             if (empty($error)) {
-                // Nếu không có lỗi thì tiến hành Sửa
-                // var_dump('okkk');
-                $this->modelDonHang->updateDonHang(
-                    $don_hang_id,
-                    $trang_thai_id
-                );
-                header("Location: "  . BASE_URL_ADMIN . "?act=don-hang");
+                $this->modelDonHang->updateDonHang($don_hang_id, $trang_thai_id);
+                header("Location: " . BASE_URL_ADMIN . "?act=don-hang");
                 exit();
             } else {
-                //Trả về form
-                // Đặt chỉ thị xóa session sau khi hiển thị form 
-
                 $_SESSION['flash'] = true;
-                header("Location: "  . BASE_URL_ADMIN . "?act=form-sua-don-hang&id_don_hang=" . $don_hang_id);
+                header("Location: " . BASE_URL_ADMIN . "?act=sua-don-hang&id_don_hang=" . $don_hang_id);
                 exit();
             }
         }
     }
-
 }
