@@ -6,12 +6,7 @@
         <div class="section-bg-color">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Chi Tiết Đơn Hàng</h1>
-                    <p>Mã Đơn Hàng: <?= htmlspecialchars($donHang['ma_don_hang']) ?></p>
-                    <p>Tên Người Nhận: <?= htmlspecialchars($donHang['ten_nguoi_nhan']) ?></p>
-                    <p>Địa Chỉ: <?= htmlspecialchars($donHang['dia_chi_nguoi_nhan']) ?></p>
-                    <p>Tổng Tiền: <?= fomatPrice($donHang['tong_tien']) . 'đ' ?></p>
-                    <p>Ngày Đặt: <?= htmlspecialchars($donHang['ngay_dat']) ?></p> <!-- Nếu có trường này -->
+
 
                     <h2>Chi Tiết Sản Phẩm</h2>
                     <div class="cart-table table-responsive">
@@ -31,17 +26,17 @@
                                             <td class="pro-title"><?= htmlspecialchars($item['ten_san_pham']) ?></td>
                                             <td class="pro-price">
                                                 <span>
-                                                    <?php if ($item['gia_khuyen_mai']): ?>
+                                                    <?php if (!empty($item['gia_khuyen_mai'])): ?>
                                                         <?= fomatPrice($item['gia_khuyen_mai']) . 'đ' ?>
                                                     <?php else: ?>
                                                         <?= fomatPrice($item['gia_san_pham']) . 'đ' ?>
                                                     <?php endif; ?>
                                                 </span>
                                             </td>
-                                            <td class="pro-quantity"><?= htmlspecialchars($item['so_luong']) ?></td>
+                                            <!-- <td class="pro-quantity"><?= htmlspecialchars($item['so_luong']) ?></td> -->
                                             <td class="pro-subtotal"><span>
                                                     <?php
-                                                    $tong_tien = $item['gia_khuyen_mai'] ? $item['gia_khuyen_mai'] * $item['so_luong'] : $item['gia_san_pham'] * $item['so_luong'];
+                                                    $tong_tien = !empty($item['gia_khuyen_mai']) ? $item['gia_khuyen_mai'] * $item['so_luong'] : $item['gia_san_pham'] * $item['so_luong'];
                                                     echo fomatPrice($tong_tien) . 'đ';
                                                     ?>
                                                 </span></td>
@@ -53,6 +48,7 @@
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
+
                         </table>
                     </div>
 

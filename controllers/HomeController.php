@@ -41,41 +41,51 @@ class HomeController
             // Gửi dữ liệu ra view
             require_once "./views/taiKhoan/taiKhoan.php";
         } else {
-            echo "Bạn cần đăng nhập để xem lịch sử đơn hàng!";
+            require_once "./views/auth/formLogin.php";
         }
     }
+
+
     public function chiTietDonHang()
     {
         $id_don_hang = $_GET['id_don_hang'] ?? null;
-        
+
         // Kiểm tra ID đơn hàng
         if (!$id_don_hang || !is_numeric($id_don_hang)) {
             header("Location: " . BASE_URL);
             exit();
         }
-    
+
+        // Lấy thông tin đơn hàng theo ID
         $donHang = $this->modelDonHang->getDonHangById($id_don_hang);
         if ($donHang) {
-            $chiTietSanPham = $this->modelDonHang->getChiTietDonHang($id_don_hang);
-            
+            // Gọi đúng tên phương thức đã đổi
+            $chiTietSanPham = $this->modelDonHang->getDetailSanPhamCuaDonHang($id_don_hang);
+            // var_dump($chiTietSanPham);
+            // die();
             // Lấy thông tin sản phẩm cho từng chi tiết đơn hàng
             $sanPhamDetails = [];
             foreach ($chiTietSanPham as $item) {
-                $sanPham = $this->modelSanPham->getDetailSanPham($item['san_pham_id']);
+                $sanPham = $this->modelSanPham->getDetailSanPham($item['san_pham_id']); // Sử dụng 'san_pham_id' để lấy thông tin sản phẩm
                 $sanPhamDetails[] = [
                     'san_pham' => $sanPham,
                     'so_luong' => $item['so_luong'],
                     'gia' => $sanPham['gia'], // Hoặc tính toán giá theo nhu cầu
+                    'thanh_tien' => $item['thanh_tien'], // Thêm thông tin thành tiền
                 ];
             }
-    
-            require_once './views/chiTietDonHang.php';
+
+
+            // Hiển thị thông tin chi tiết đơn hàng
+            require_once './views/taiKhoan/chiTietDonHang.php';
         } else {
             header("Location: " . BASE_URL);
             exit();
         }
     }
-    
+
+
+
 
 
 
@@ -151,6 +161,53 @@ class HomeController
                 exit();
             }
         }
+    }
+
+    public function formRegister()
+    {
+        require_once './views/auth/formRegister.php';
+
+        deleteSessionError();
+    }
+
+    public function postRegister()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //Lấy thông tin từ form gửi lên
+
+            $hoTen = $_POST['ho_ten'];
+            $email = $_POST['email'];
+            $password = $_POST['mat_khau'];
+
+
+            //Kiểm tra email đã tồn tại chưa
+            $user = $this->modelTaiKhoan->registerUser($hoTen, $email, $password);
+
+            if (is_string($user)) {
+                $_SESSION['error'] = $user;
+                $_SESSION['flash'] = true;
+
+                header("Location:" . BASE_URL . '?act=register');
+                exit();
+            } else {
+                //Đăng ký thành công và chuyển hướng về trang đăng nhập
+                $_SESSION['success'] = $user;
+                header("Location:" . BASE_URL);
+                exit();
+            }
+        }
+    }
+    public function logout()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+
+        //Chuyển hướng về trang chủ hoặc trang đăng nhập
+        header(
+            "Location:" . BASE_URL
+        );
+        exit();
     }
 
     public function addGioHang()
@@ -273,6 +330,39 @@ class HomeController
             $phuong_thuc_thanh_toan_id = $_POST['phuong_thuc_thanh_toan_id'];
             $ngay_dat = date('Y-m-d ');
             $trang_thai_id = 1;
+            $errors = [];
+
+            // Kiểm tra các trường bắt buộc
+            if (empty($ten_nguoi_nhan)) {
+                $errors['ten_nguoi_nhan'] = "Vui lòng nhập tên người nhận.";
+            }
+
+            if (empty($email_nguoi_nhan)) {
+                $errors['email_nguoi_nhan'] = "Vui lòng nhập địa chỉ email.";
+            } elseif (!filter_var($email_nguoi_nhan, FILTER_VALIDATE_EMAIL)) {
+                $errors['email_nguoi_nhan'] = "Địa chỉ email không hợp lệ.";
+            }
+
+            if (empty($sdt_nguoi_nhan)) {
+                $errors['sdt_nguoi_nhan'] = "Vui lòng nhập số điện thoại.";
+            } elseif (!preg_match('/^[0-9]{10}$/', $sdt_nguoi_nhan)) {
+                $errors['sdt_nguoi_nhan'] = "Số điện thoại không hợp lệ.";
+            }
+
+            if (empty($dia_chi_nguoi_nhan)) {
+                $errors['dia_chi_nguoi_nhan'] = "Vui lòng nhập địa chỉ.";
+            }
+
+            // Nếu có lỗi, trả lại trang thanh toán và hiển thị lỗi
+            if (!empty($errors)) {
+                // Lưu lỗi vào session để hiển thị
+                $_SESSION['errors'] = $errors;
+                $_SESSION['old_data'] = $_POST; // Lưu dữ liệu cũ để giữ lại giá trị đã nhập
+                header("Location: " . BASE_URL . "?act=thanh-toan");
+                exit();
+            }
+
+            // Nếu không có lỗi, xử lý đơn hàng
             $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
             $tai_khoan_id = $user['id'];
             $ma_don_hang = 'DH-' . rand(1000, 999999);
@@ -301,7 +391,7 @@ class HomeController
             exit();
         }
     }
-    
+
 
 
 }

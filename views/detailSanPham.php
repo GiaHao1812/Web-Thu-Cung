@@ -178,11 +178,10 @@
                                 <figure class="product-thumb">
                                     <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id']; ?>">
 
-                                        <img class="pri-img" style="height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-                                        <img class="sec-img" style="height: 350px;" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-
-                                        <img class="pri-img" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
-                                        <img class="sec-img" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                        <img class="pri-img" style="object-fit: cover; height: 350px;"
+                                            src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
+                                        <img class="sec-img" style="object-fit: cover; height: 350px;"
+                                            src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="product">
 
                                     </a>
                                     <div class="product-badge">
@@ -192,7 +191,7 @@
                                         $tinhNgay = $ngayHienTai->diff($ngayNhap);
 
                                         if ($tinhNgay->days <= 7) {
-                                        ?>
+                                            ?>
                                             <div class="product-label new">
                                                 <span>Mới</span>
                                             </div>

@@ -46,22 +46,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($listDonHang as $key => $donHang) : ?>
+                                    <?php foreach ($listDonHang as $key => $donHang): ?>
                                         <tr>
-                                            <td><?= $key + 1  ?></td>
-                                            <td><?= $donHang['ma_don_hang']  ?></td>
-                                            <td><?= $donHang['ten_nguoi_nhan']  ?></td>
-                                            <td><?= $donHang['sdt_nguoi_nhan']  ?></td>
-                                            <td><?= $donHang['ngay_dat']  ?></td>
-                                            <td><?= $donHang['tong_tien']  ?></td>
-                                            <td><?= $donHang['ten_trang_thai']  ?></td>
+                                            <td><?= $key + 1 ?></td>
+                                            <td><?= $donHang['ma_don_hang'] ?></td>
+                                            <td><?= $donHang['ten_nguoi_nhan'] ?></td>
+                                            <td><?= $donHang['sdt_nguoi_nhan'] ?></td>
+                                            <td><?= $donHang['ngay_dat'] ?></td>
+                                            <td><?= $donHang['tong_tien'] ?></td>
+                                            <td><?= $donHang['ten_trang_thai'] ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>">
-                                                    <i class="nav-icon fas fa-solid fa-eye"></i>
+                                                <a class="btn btn-primary"
+                                                    href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>">
+                                                    <i class="nav-icon fas fa-solid fa-eye ml-full"></i>
                                                 </a>
-                                                <a class="btn btn-warning" href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_don_hang=' . $donHang['id'] ?>">
-                                                    <i class="nav-icon fas fa-solid fa-wrench"></i>
-                                                </a>
+
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -98,7 +97,7 @@
 <!-- End Footer  -->
 <!-- Page specific script -->
 <script>
-    $(function() {
+    $(function () {
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,

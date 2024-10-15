@@ -19,7 +19,8 @@
                             </div>
                         </div>
                         <div class="widget-body">
-                            <p>Khám phá thiên đường thú cưng tại ThuCungFPL Chúng tôi cung cấp những bé chó, mèo khỏe mạnh, dễ thương, với dịch vụ chăm sóc tận tình và giao hàng nhanh chóng</p>
+                            <p>Khám phá thiên đường thú cưng tại ThuCungFPL Chúng tôi cung cấp những bé chó, mèo khỏe
+                                mạnh, dễ thương, với dịch vụ chăm sóc tận tình và giao hàng nhanh chóng</p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,8 @@
                             <address class="contact-block">
                                 <ul>
                                     <li><i class="pe-7s-home"></i>Số 22-Tổ 1-Đông Anh-Hà Nội</li>
-                                    <li><i class="pe-7s-mail"></i> <a href="mailto:demo@plazathemes.com">thucungfpl@gmail.com</a></li>
+                                    <li><i class="pe-7s-mail"></i> <a
+                                            href="mailto:demo@plazathemes.com">thucungfpl@gmail.com</a></li>
                                     <li><i class="pe-7s-call"></i> <a href="tel:(012)800456789987">0345673214</a></li>
                                 </ul>
                             </address>
@@ -69,7 +71,8 @@
                     <div class="newsletter-wrapper">
                         <h6 class="widget-title-text">Đăng kí để thông báo mới nhất</h6>
                         <form class="newsletter-inner" id="mc-form">
-                            <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Nhập Email">
+                            <input type="email" class="news-field" id="mc-email" autocomplete="off"
+                                placeholder="Nhập Email">
                             <button class="news-btn" id="mc-submit">Đăng kí</button>
                         </form>
                         <!-- mail-chimp-alerts Start -->
@@ -94,7 +97,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; 2024 <b>ninhhao</b><i class="fa fa-heart text-danger"></i><a href="#"><b>thucungfpl</b></a></p>
+                        <p>&copy; 2024 <b>ninhhao</b><i class="fa fa-heart text-danger"></i><a
+                                href="#"><b>thucungfpl</b></a></p>
                     </div>
                 </div>
             </div>
@@ -132,8 +136,10 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8"></script>
 <!-- google map active js -->
 <script src="assets/js/plugins/google-map.js"></script>
+<script src="assets/js/plugins/chart.js/Chart.min.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+
 </body>
 
 

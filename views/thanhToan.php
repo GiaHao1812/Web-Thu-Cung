@@ -75,12 +75,22 @@
                                 <div class="single-input-item">
                                     <label for="sdt_nguoi_nhan" class="required">SĐT Người Nhận</label>
                                     <input type="text" id="sdt_nguoi_nhan" name="sdt_nguoi_nhan"
-                                        value="<?= $user['so_dien_thoai'] ?>" placeholder="SĐT Người Nhận" required />
+                                        value="<?= isset($_SESSION['old_data']['sdt_nguoi_nhan']) ? $_SESSION['old_data']['sdt_nguoi_nhan'] : '' ?>"
+                                        placeholder="SĐT Người Nhận" />
+                                    <?php if (isset($_SESSION['errors']['sdt_nguoi_nhan'])): ?>
+                                        <div class="error" style="color: red;"><?= $_SESSION['errors']['sdt_nguoi_nhan'] ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="single-input-item">
                                     <label for="dia_chi_nguoi_nhan" class="required">Địa Chỉ Người Nhận</label>
                                     <input type="text" id="dia_chi_nguoi_nhan" name="dia_chi_nguoi_nhan"
-                                        value="<?= $user['dia_chi'] ?>" placeholder="Địa Chỉ Người Nhận" required />
+                                        value="<?= isset($_SESSION['old_data']['dia_chi_nguoi_nhan']) ? $_SESSION['old_data']['dia_chi_nguoi_nhan'] : '' ?>"
+                                        placeholder="Địa Chỉ Người Nhận" />
+                                    <?php if (isset($_SESSION['errors']['dia_chi_nguoi_nhan'])): ?>
+                                        <div class="error" style="color: red;">
+                                            <?= $_SESSION['errors']['dia_chi_nguoi_nhan'] ?></div>
+                                    <?php endif; ?>
                                 </div>
 
 
@@ -113,7 +123,7 @@
                                             $tongGioHang = 0;
                                             foreach ($chi_tiet_gio_hang as $key => $sanPham):
 
-                                            ?>
+                                                ?>
                                                 <tr>
                                                     <td><a href=""><?= $sanPham['ten_san_pham'] ?> <strong> x
                                                                 <?= $sanPham['so_luong'] ?></strong></a>
@@ -170,17 +180,17 @@
                                         </div>
                                     </div>
                                     <div class="single-payment-method">
-                                        <div class="payment-method-name">
+                                        <!-- <div class="payment-method-name">
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" id="directbank" value="2"
                                                     name="phuong_thuc_thanh_toan_id" class="custom-control-input" />
                                                 <label class="custom-control-label" for="directbank">Thanh Toán
                                                     Online</label>
                                             </div>
-                                        </div>
-                                        <div class="payment-method-details" data-method="bank">
-                                            <p>Khách Hàng Cần Thanh Toán Trước</p>
-                                        </div>
+                                        </div> 
+                                    <div class="payment-method-details" data-method="bank">
+                                        <p>Khách Hàng Cần Thanh Toán Trước</p>
+                                    </div> -->
                                     </div>
 
                                     <div class="summary-footer-area">

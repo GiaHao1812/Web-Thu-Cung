@@ -16,20 +16,29 @@
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <h1>Quản Lý Danh Sách Đơn Hàng - Đơn Hàng: <?= $donHang['ma_don_hang'] ?></h1>
                 </div>
-                <div class="col-sm-2">
-                    <form action="" method="POST" class="form-group">
-                        <select>
-                            <?php foreach ($listTrangThaiDonHang as $key => $trangThai): ?>
-                                <option <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
-                                    <?= $trangThai['id'] < $donHang['trang_thai_id'] ? 'disabled' : '' ?>
-                                    value="<?= $trangThai['id'] ?>">
-                                    <?= $trangThai['ten_trang_thai'] ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
+                <div class="col-sm-3">
+                    <form action="<?= BASE_URL_ADMIN . '?act=sua-don-hang' ?>" method="POST">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <input type="hidden" name="don_hang_id" value="<?= $donHang['id'] ?>">
+                                <select name="trang_thai_id" class="form-control">
+                                    <?php foreach ($listTrangThaiDonHang as $trangThai): ?>
+                                        <option value="<?= $trangThai['id'] ?>"
+                                            <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
+                                            <?= $donHang['trang_thai_id'] > $trangThai['id'] || in_array($donHang['trang_thai_id'], [9, 10, 11]) ? 'hidden' : '' ?>>
+                                            <?= $trangThai['ten_trang_thai'] ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-secondary" style="margin-left: 2px;">Cập
+                                    Nhật</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
@@ -38,7 +47,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class=" content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -102,7 +111,8 @@
                                     <b>Mã Đơn Hàng: <?= $donHang['ma_don_hang'] ?></b><br>
                                     <b>Tổng Tiền:</b> <?= $donHang['tong_tien'] ?><br>
                                     <b>Ghi Chú:</b> <?= $donHang['ghi_chu'] ?><br>
-                                    <b>Thanh Toán:</b> <?= $donHang['ten_phuong_thuc'] ?><br>
+                                    <b>Thanh Toán:</b>
+                                    <?= $donHang['ten_phuong_thuc'] ?><br>
                                 </address>
                             </div>
                             <!-- /.col -->
@@ -146,7 +156,9 @@
 
                             <!-- /.col -->
                             <div class="col-6">
-                                <p class="lead">Ngày Đặt Hàng: <?= fomatDate($donHang['ngay_dat']); ?></p>
+                                <p class="lead">Ngày Đặt Hàng:
+                                    <?= fomatDate($donHang['ngay_dat']); ?>
+                                </p>
 
                                 <div class="table-responsive">
                                     <table class="table">
@@ -158,11 +170,11 @@
                                         </tr>
                                         <tr>
                                             <th>Vận Chuyển:</th>
-                                            <td>200.000</td>
+                                            <td>40.000</td>
                                         </tr>
                                         <tr>
                                             <th>Tổng Tiền:</th>
-                                            <td><?= $tong_tien + 200000 ?></td>
+                                            <td><?= $tong_tien + 40000 ?></td>
                                         </tr>
                                     </table>
                                 </div>

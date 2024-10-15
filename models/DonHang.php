@@ -40,15 +40,53 @@ class DonHang
     public function getDonHangByTaiKhoan($tai_khoan_id)
     {
         try {
-            $sql = "SELECT * FROM don_hangs WHERE tai_khoan_id = :tai_khoan_id ORDER BY ngay_dat DESC ";
+            // Sắp xếp theo ngày đặt giảm dần
+            $sql = "SELECT * FROM don_hangs WHERE tai_khoan_id = :tai_khoan_id ORDER BY ngay_dat DESC";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([':tai_khoan_id' => $tai_khoan_id]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            error_log("Lỗi truy vấn đơn hàng: " . $e->getMessage());
+            return [];
         }
     }
-   
+
+
+    public function getDonHangById($id)
+    {
+        try {
+            $sql = "SELECT * FROM don_hangs WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':id' => $id]);
+
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            // Ghi lại lỗi và trả về null
+            error_log('Lỗi: ' . $e->getMessage());
+            return null;
+        }
+    }
+
+    public function getDetailSanPhamCuaDonHang($don_hang_id)
+    {
+        try {
+            $sql = "SELECT chi_tiet_don_hangs.*, 
+            san_phams.ten_san_pham, 
+            san_phams.gia_san_pham 
+             FROM chi_tiet_don_hangs
+             INNER JOIN san_phams ON chi_tiet_don_hangs.san_pham_id = san_phams.id
+             WHERE chi_tiet_don_hangs.don_hang_id = :don_hang_id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':don_hang_id' => $don_hang_id]);
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            echo 'Lỗi: ' . $e->getMessage();
+        }
+    }
+
+
 
 
 }

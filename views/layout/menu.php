@@ -61,16 +61,21 @@
                                     <li class="user-hover">
                                         <a href="#"><i class="pe-7s-user"></i></a>
                                         <ul class="dropdown-list">
-                                            <!-- Kiểm tra nếu chưa đăng nhập -->
+                                            <!-- Check Đăng Nhập -->
                                             <?php if (!isset($_SESSION['user_client'])) { ?>
                                                 <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng Nhập</a></li>
+                                                <li><a href="<?= BASE_URL . '?act=register' ?>">Đăng Kí</a></li>
+
                                             <?php } else { ?>
                                                 <li><a href="<?= BASE_URL . '?act=tai-khoan' ?>">Tài Khoản</a></li>
+                                                <li><a href="<?= BASE_URL . '?act=logout' ?>">Đăng Xuất</a></li>
                                             <?php } ?>
+
+                                            <!--  -->
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#" class="minicart-btn">
+                                        <a href="<?= BASE_URL . '?act=gio-hang' ?>" class="minicart-btn">
                                             <i class="pe-7s-shopbag"></i>
                                         </a>
                                     </li>

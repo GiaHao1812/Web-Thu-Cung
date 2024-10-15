@@ -47,16 +47,15 @@
                                                             <th>Đơn Hàng</th>
                                                             <th>Ngày Đặt</th>
                                                             <th>Trạng Thái</th>
-                                                            <th>Tông Tiền</th>
+                                                            <th>Tổng Tiền</th>
                                                             <th>Thao Tác</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php foreach ($listDonHang as $donHang): ?>
                                                             <tr>
-                                                                <td><?= $donHang['ma_don_hang']; ?></td>
-                                                                <td><?= $donHang['ngay_dat']; ?>
-                                                                </td>
+                                                                <td><?= htmlspecialchars($donHang['ma_don_hang']); ?></td>
+                                                                <td><?= htmlspecialchars($donHang['ngay_dat']); ?></td>
                                                                 <td>
                                                                     <?php
                                                                     // Hiển thị trạng thái
@@ -88,17 +87,18 @@
                                                                         case 9:
                                                                             echo 'Thành Công';
                                                                             break;
-
                                                                         default:
                                                                             echo 'Đang xử lý';
                                                                             break;
                                                                     }
                                                                     ?>
                                                                 </td>
-                                                                <td><?= number_format($donHang['tong_tien'], decimals: 2) . 'đ'; ?>
+                                                                <td><?= number_format($donHang['tong_tien'], 2) . ' đ'; ?>
                                                                 </td>
-                                                                <td><a href="<?= BASE_URL . '?act=chi-tiet-don-hang&id=' . $donHang['id'] ?>"
-                                                                        class="btn btn-sqr">View</a></td>
+                                                                <td>
+                                                                    <a href="<?= BASE_URL . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>"
+                                                                        class="btn btn-sqr">View</a>
+                                                                </td>
                                                             </tr>
                                                         <?php endforeach; ?>
                                                     </tbody>
@@ -106,6 +106,7 @@
                                             </div>
                                         </div>
                                     </div>
+
 
                                     <!-- Single Tab Content End -->
 

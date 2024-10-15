@@ -38,7 +38,8 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Tên danh mục</label>
-                                    <input type="text" class="form-control" name="ten_danh_muc" placeholder="Nhập tên danh mục">
+                                    <input type="text" class="form-control" name="ten_danh_muc"
+                                        placeholder="Nhập tên danh mục">
                                     <?php if (isset($error['ten_danh_muc'])) { ?>
                                         <p class="text-danger"><?= $error['ten_danh_muc']; ?></p>
                                     <?php } ?>
@@ -46,7 +47,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Mô tả</label>
-                                    <textarea name="mo_ta" id="" class="form-control" placeholder="Nhập mô tả"></textarea>
+                                    <textarea name="mo_ta" id="" class="form-control"
+                                        placeholder="Nhập mô tả"></textarea>
                                 </div>
 
 
@@ -54,6 +56,7 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="<?= BASE_URL_ADMIN . '?act=danh-muc' ?>" class="btn btn-secondary">Back</a>
                             </div>
                         </form>
                     </div>
