@@ -86,12 +86,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- Cart Update Option -->
-                        <!-- <div class="cart-update-option d-block d-md-flex justify-content-between">
-                            <div class="cart-update">
-                                <a href="#" class="btn btn-sqr">Update Cart</a>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 <div class="row">
