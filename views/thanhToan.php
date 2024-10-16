@@ -151,14 +151,14 @@
                                             <tr>
                                                 <td>Vận Chuyển</td>
                                                 <td class="d-flex justify-content-center">
-                                                    <strong>30.000đ</strong>
+                                                    <strong>40.000đ</strong>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <input type="hidden" name="tong_tien"
-                                                    value="<?= $tongGioHang + 30000 ?>">
+                                                    value="<?= $tongGioHang + 40000 ?>">
                                                 <td>Tổng Đơn Hàng</td>
-                                                <td><strong><?= fomatPrice($tongGioHang + 30000) . 'đ' ?></strong></td>
+                                                <td><strong><?= fomatPrice($tongGioHang + 40000) . 'đ' ?></strong></td>
                                             </tr>
                                         </tfoot>
                                     </table>

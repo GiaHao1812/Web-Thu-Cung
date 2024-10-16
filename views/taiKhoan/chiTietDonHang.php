@@ -6,8 +6,6 @@
         <div class="section-bg-color">
             <div class="row">
                 <div class="col-lg-12">
-
-
                     <h2>Chi Tiết Sản Phẩm</h2>
                     <div class="cart-table table-responsive">
                         <table class="table table-bordered">

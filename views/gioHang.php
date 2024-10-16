@@ -108,11 +108,11 @@
                                         </tr>
                                         <tr>
                                             <td>Vận Chuyển </td>
-                                            <td>30.000đ</td>
+                                            <td>40.000đ</td>
                                         </tr>
                                         <tr class="total">
                                             <td>Tông Tiền Thanh Toán</td>
-                                            <td class="total-amount"><?= fomatPrice($tongGioHang + 30000) . 'đ' ?></td>
+                                            <td class="total-amount"><?= fomatPrice($tongGioHang + 40000) . 'đ' ?></td>
                                         </tr>
                                     </table>
                                 </div>

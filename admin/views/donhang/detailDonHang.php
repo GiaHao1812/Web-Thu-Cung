@@ -21,22 +21,34 @@
                 </div>
                 <div class="col-sm-3">
                     <form action="<?= BASE_URL_ADMIN . '?act=sua-don-hang' ?>" method="POST">
+
                         <div class="d-flex justify-content-between align-items-center">
+
+                        <div class="d-flex justify-content-between me-4">
+
                             <div>
                                 <input type="hidden" name="don_hang_id" value="<?= $donHang['id'] ?>">
                                 <select name="trang_thai_id" class="form-control">
                                     <?php foreach ($listTrangThaiDonHang as $trangThai): ?>
+
                                         <option value="<?= $trangThai['id'] ?>"
                                             <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?>
                                             <?= $donHang['trang_thai_id'] > $trangThai['id'] || in_array($donHang['trang_thai_id'], [9, 10, 11]) ? 'hidden' : '' ?>>
+
+                                        <option value="<?= $trangThai['id'] ?>" <?= $trangThai['id'] == $donHang['trang_thai_id'] ? 'selected' : '' ?> <?= $donHang['trang_thai_id'] > $trangThai['id'] || in_array($donHang['trang_thai_id'], [9, 10, 11]) ? 'hidden' : '' ?>>
+
                                             <?= $trangThai['ten_trang_thai'] ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div>
+
                                 <button type="submit" class="btn btn-secondary" style="margin-left: 2px;">Cập
                                     Nhật</button>
+
+                                <button type="submit" class="btn btn-secondary">Cập Nhật</button>
+
                             </div>
                         </div>
                     </form>
@@ -77,7 +89,7 @@
                                     <i class="fas fa-cat"></i> Shop Thú Cưng Anii - ninhna.
                                     <small class="float-right">Ngày Đặt:
                                         <?=
-                                            fomatDate($donHang['ngay_dat']);
+                                        fomatDate($donHang['ngay_dat']);
                                         ?>
                                     </small>
                                 </h4>
@@ -202,7 +214,7 @@
 <!-- End Footer  -->
 <!-- Page specific script -->
 <script>
-    $(function () {
+    $(function() {
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,

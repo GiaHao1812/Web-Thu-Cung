@@ -29,8 +29,8 @@
                                         </li>
                                         <li><a href="<?= BASE_URL . '?act=san-pham' ?>">Sản Phẩm</a>
                                         </li>
-                                        <li><a href="<?= BASE_URL . '?act=gioi-thieu' ?>">Giới Thiệu</a></li>
-                                        <li><a href="<?= BASE_URL . '?act=lien-he' ?>">Liên Hệ</a></li>
+                                        <li><a href="#">Giới Thiệu</a></li>
+                                        <li><a href="#">Liên Hệ</a></li>
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->
@@ -55,11 +55,13 @@
                                 <ul class="nav justify-content-end">
                                     <!-- Hiện tên đăng nhập -->
                                     <label for=""><?php if (isset($_SESSION['user_client'])) {
-                                        echo $_SESSION['user_client'];
-                                    } ?></label>
+                                                        echo $_SESSION['user_client'];
+                                                    } ?></label>
                                     <!--  -->
                                     <li class="user-hover">
-                                        <a href="#"><i class="pe-7s-user"></i></a>
+                                        <a href="#">
+                                            <i class="pe-7s-user"></i>
+                                        </a>
                                         <ul class="dropdown-list">
                                             <!-- Check Đăng Nhập -->
                                             <?php if (!isset($_SESSION['user_client'])) { ?>
@@ -67,7 +69,11 @@
                                                 <li><a href="<?= BASE_URL . '?act=register' ?>">Đăng Kí</a></li>
 
                                             <?php } else { ?>
-                                                <li><a href="<?= BASE_URL . '?act=tai-khoan' ?>">Tài Khoản</a></li>
+
+                                               <li><a href="<?= BASE_URL . '?act=tai-khoan' ?>">Tài Khoản</a></li>
+
+                                                <li><a href="<?= BASE_URL . "?act=tai-khoan" ?>">Tài Khoản</a></li>
+
                                                 <li><a href="<?= BASE_URL . '?act=logout' ?>">Đăng Xuất</a></li>
                                             <?php } ?>
 

@@ -68,10 +68,11 @@ class AdminDonHang
     public function getListSpDonHang($id)
     {
         try {
-            $sql = "SELECT chi_tiet_don_hangs.* , san_phams.ten_san_pham
+            $sql = "SELECT san_phams.ten_san_pham
             FROM chi_tiet_don_hangs
-            INNER JOIN san_phams ON chi_tiet_don_hangs.san_pham_id = san_phams.id
+            INNER JOIN san_phams ON chi_tiet_don_hangs.don_hang_id = san_phams.id
             WHERE chi_tiet_don_hangs.don_hang_id = :id";
+
 
             $stmt = $this->conn->prepare($sql);
 
@@ -84,32 +85,17 @@ class AdminDonHang
     }
     public function updateDonHang(
         $id,
-        // $ten_nguoi_nhan,
-        // $email_nguoi_nhan,
-        // $sdt_nguoi_nhan,
-        // $dia_chi_nguoi_nhan,
-        // $ghi_chu,
         $trang_thai_id
     ) {
         try {
             $sql = "UPDATE don_hangs
                     SET 
-                        -- ten_nguoi_nhan = :ten_nguoi_nhan,
-                        -- email_nguoi_nhan = :email_nguoi_nhan,
-                        -- sdt_nguoi_nhan = :sdt_nguoi_nhan,
-                        -- dia_chi_nguoi_nhan = :dia_chi_nguoi_nhan,
-                        -- ghi_chu = :ghi_chu,
                         trang_thai_id = :trang_thai_id
                     WHERE id = :id";
 
             $stmt = $this->conn->prepare($sql);
 
             $stmt->execute([
-                // ':ten_nguoi_nhan' => $ten_nguoi_nhan,
-                // ':email_nguoi_nhan' => $email_nguoi_nhan,
-                // ':sdt_nguoi_nhan' => $sdt_nguoi_nhan,
-                // ':dia_chi_nguoi_nhan' => $dia_chi_nguoi_nhan,
-                // ':ghi_chu' => $ghi_chu,
                 ':trang_thai_id' => $trang_thai_id,
                 ':id' => $id
             ]);
@@ -126,8 +112,11 @@ class AdminDonHang
             $sql = "SELECT don_hangs.*, trang_thai_don_hangs.ten_trang_thai 
             FROM don_hangs 
             INNER JOIN trang_thai_don_hangs ON don_hangs.trang_thai_id = trang_thai_don_hangs.id
+
             WHERE don_hangs.tai_khoan_id = :id
-            ORDER BY don_hangs.ngay_dat DESC ";
+            ORDER BY don_hangs.ngay_dat DESC 
+
+            WHERE don_hangs.tai_khoan_id = :id";
 
             $stmt = $this->conn->prepare($sql);
 
@@ -138,6 +127,7 @@ class AdminDonHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
+    
     // public function getDonHangLast7Days()
     // {
     //     try {

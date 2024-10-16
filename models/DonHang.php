@@ -52,6 +52,7 @@ class DonHang
     }
 
 
+
     public function getDonHangById($id)
     {
         try {
@@ -87,6 +88,24 @@ class DonHang
     }
 
 
+    public function updateDonHang($id, $trang_thai_id)
+    {
+        try {
+            $sql = "UPDATE don_hangs
+                SET trang_thai_id = :trang_thai_id
+                WHERE id = :id";
 
+            $stmt = $this->conn->prepare($sql);
 
+            $stmt->execute([
+                ':trang_thai_id' => $trang_thai_id,
+                ':id' => $id
+            ]);
+
+            return true;
+        } catch (\Exception $e) {
+            // Log lỗi hoặc hiển thị thông báo lỗi
+            echo 'Lỗi: ' . $e->getMessage();
+        }
+    }
 }

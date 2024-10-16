@@ -32,17 +32,13 @@
                             <h5 class="sidebar-title">Danh Mục</h5>
                             <div class="sidebar-body">
                                 <ul class="shop-categories h6">
-                                    <?php if (!empty($listDanhMuc)): ?>
-                                        <?php foreach ($listDanhMuc as $danhMuc): ?>
-                                            <li>
-                                                <a href="<?= BASE_URL . '?act=san-pham&id_danh_muc=' . $danhMuc['id'] ?>">
-                                                    <?= $danhMuc['ten_danh_muc'] ?>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <li>Không có danh mục nào được tìm thấy.</li>
-                                    <?php endif; ?>
+                                    <?php foreach ($listDanhMuc as $danhMuc): ?>
+                                        <li>
+                                            <a href="<?= BASE_URL . '?act=san-pham&id_danh_muc=' . $danhMuc['id'] ?>">
+                                                <?= $danhMuc['ten_danh_muc'] ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
 
 
@@ -53,7 +49,7 @@
                             <div class="sidebar-banner mt-5">
                                 <div class="img-container">
                                     <a href="#">
-                                        <img style="height: 400px; object-fit:cover" src="assets/img/banner/chomeo.jpg" alt="">
+                                        <img style="height: 288px; object-fit:cover" src="assets/img/banner/chomeo.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -104,18 +100,6 @@
                             <!-- product single item end -->
                         </div>
                         <!-- product item list wrapper end -->
-
-                        <!-- start pagination area -->
-                        <div class="paginatoin-area text-center">
-                            <ul class="pagination-box">
-                                <li><a class="previous" href="#"><i class="pe-7s-angle-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a class="next" href="#"><i class="pe-7s-angle-right"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- end pagination area -->
                     </div>
                 </div>
 

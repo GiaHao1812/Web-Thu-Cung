@@ -17,9 +17,10 @@ class AdminDonHangController
     }
 
 
+
     public function detailDonHang()
     {
-        $don_hang_id = $_GET['id_don_hang'];
+        $don_hang_id = $_GET['don_hang_id'];
 
         // Lấy thông tin đơn hàng ở bản don_hangs
         $donHang = $this->modelDonHang->getDetailDonHang($don_hang_id);
@@ -32,6 +33,7 @@ class AdminDonHangController
 
         require_once './views/donhang/detailDonHang.php';
     }
+
     //////////////////
     //SỬA Đơn Hàng//
     ////////////////
@@ -49,6 +51,7 @@ class AdminDonHangController
             exit();
         }
     }
+
     public function postEditDonHang()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
